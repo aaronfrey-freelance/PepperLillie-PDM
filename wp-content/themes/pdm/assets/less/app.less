@@ -63,7 +63,25 @@ body { }
    Footer
    ========================================================================== */
 
-.content-info { }
+.content-info {
+	background: grey;
+	height: 50px;
+	ul {
+		overflow: auto;
+		line-height: 12px;
+		margin: 0;
+		padding: 19px 0 0 0;
+		list-style: none;
+		li {
+			float: left;
+			color: #fff;
+			padding-right: 5px;
+			margin-left: 5px;
+			border-right: 1px solid #fff;
+		}
+		li:last-child { border: none; }
+	}
+}
 
 /* ==========================================================================
    Article
