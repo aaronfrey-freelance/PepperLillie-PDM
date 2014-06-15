@@ -65,6 +65,25 @@ body { }
 
 .content-info { }
 
+/* ==========================================================================
+   Article
+   ========================================================================== */
+article {
+	display: none;
+	&.first-post { display: block; }
+}
+
+#sidebar-category {
+	list-style: none;
+	li {
+		a { color: grey; text-decoration: none; }
+		&.active {
+			a { color: blue; }
+		}
+	}
+}
+
+
 
 
 /* ==========================================================================
