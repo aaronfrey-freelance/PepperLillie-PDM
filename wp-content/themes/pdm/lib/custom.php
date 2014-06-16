@@ -1,6 +1,6 @@
 <?php
 
-//Custom Theme Settings
+// Custom Theme Settings
 add_action('admin_menu', 'add_gcf_interface');
 
 function add_gcf_interface() {
