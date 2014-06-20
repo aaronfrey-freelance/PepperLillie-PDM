@@ -5,10 +5,16 @@
 @import "bootstrap/bootstrap.less";
 
 /* ==========================================================================
+   Fonts
+   ========================================================================== */
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,500,500italic,700italic,700);
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,700);
+
+/* ==========================================================================
    Base
    ========================================================================== */
 
-body { }
+body { font-family: 'Roboto', sans-serif; }
 
 
 
@@ -67,7 +73,6 @@ body { }
 	background: grey;
 	height: 50px;
 	ul {
-		overflow: auto;
 		line-height: 12px;
 		margin: 0;
 		padding: 19px 0 0 0;
@@ -86,7 +91,7 @@ body { }
 /* ==========================================================================
    Article
    ========================================================================== */
-article {
+.category-about article, .category-about article {
 	display: none;
 	&.first-post { display: block; }
 }
