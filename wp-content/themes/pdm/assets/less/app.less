@@ -70,21 +70,51 @@ body { font-family: 'Roboto', sans-serif; }
    ========================================================================== */
 
 .content-info {
-	background: grey;
-	height: 50px;
-	ul {
-		line-height: 12px;
-		margin: 0;
-		padding: 19px 0 0 0;
-		list-style: none;
-		li {
-			float: left;
-			color: #fff;
-			padding-right: 5px;
-			margin-left: 5px;
-			border-right: 1px solid #fff;
+	background: #6a747c;
+	color: #fff;
+	font-size: 13px;
+	min-height: 52px;
+	a { display: inline-block; text-decoration: none; }
+	.address-footer {
+		margin-top: 14px;
+		line-height: 25px;
+		width: 259px;
+		span {
+			font-size: 13px;
+			font-weight: 500;
+			&.first { margin-left: 0; }
+			&.border {
+				display: inline-block;
+				background: #fff;
+				margin: 0 7px -2px 7px;
+				height: 13px;
+				width: 1px; }
 		}
-		li:last-child { border: none; }
+		.ftp {
+			background: #4f575d;
+			padding: 0 4px;
+			margin-left: 10px;
+			border: 1px solid #7f8b95;
+			color: #fff;
+		}
+	}
+
+	.social-footer {
+		padding-top: 13px;
+		padding-bottom: 20px;
+		font-size: 16px;
+		line-height: 26px;
+		float: left;
+		span { margin-right: 10px; }
+		a {
+			height: 27px;
+			width: 27px;
+			text-indent: -99999px;
+			margin-right: 1px;
+			&.linkedin { background: url('../img/social/linkedin.png') no-repeat; }
+			&.facebook { background: url('../img/social/facebook.png') no-repeat; }
+			&.youtube { background: url('../img/social/youtube.png') no-repeat; }
+		}
 	}
 }
 
@@ -125,7 +155,12 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
    Media Queries
    ========================================================================== */
 
-@media (min-width: @screen-sm-min) { }
+@media (min-width: @screen-sm-min) {
+	.content-info {
+		.address-footer { width: 100%; }
+		.social-footer { float: right; padding-bottom: 0; }
+	}
+}
 
 @media (min-width: @screen-md-min) { }
 
