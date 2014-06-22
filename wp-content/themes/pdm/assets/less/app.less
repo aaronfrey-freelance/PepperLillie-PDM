@@ -22,9 +22,28 @@ body { font-family: 'Roboto', sans-serif; }
    Header
    ========================================================================== */
 
-.banner { }
-
-
+.banner { border: none; }
+.navbar-brand {
+	height: 81px;
+	width: 146px;
+	display: block;
+	background: url('../img/logo.png') no-repeat;
+}
+.navbar-nav {
+	font-family: 'Roboto Slab', serif;
+	font-weight: 700;
+	font-size: 16px;
+}
+.nav>li {
+	float: left;
+	width: 50%;
+	text-align: left;
+	background: #e4e4e4;
+	border-right: 1px solid #c2c2c2;
+	border-bottom: 1px solid #c2c2c2;
+}
+.navbar-toggle { margin-top: 20px; }
+.navbar-collapse { border: none; }
 
 /* ==========================================================================
    Content
@@ -63,7 +82,13 @@ body { font-family: 'Roboto', sans-serif; }
 .hentry .entry-content { }
 .hentry footer { }
 
+/* ==========================================================================
+   Contact
+   ========================================================================== */
 
+#map-canvas { height: 220px; width: 306px; margin-bottom: 23px;}
+.headquarters { width: 306px; }
+.blue-border { border: 1px solid #2e80c1; }
 
 /* ==========================================================================
    Footer
@@ -155,13 +180,41 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
    Media Queries
    ========================================================================== */
 
+/* Tablet */
 @media (min-width: @screen-sm-min) {
+
+	/* Header */
+	.navbar-nav { margin-top: 0; }
+	.navbar-nav>li>a {
+		line-height: 50px;
+		padding-top: 14px;
+		padding-bottom: 14px;
+	}
+	.nav>li {
+		width: 16.66%;
+		border-bottom: none;
+		text-align: center;
+		&:last-child { border: none; }
+	}
+
+	/* Footer */
 	.content-info {
 		.address-footer { width: 100%; }
 		.social-footer { float: right; padding-bottom: 0; }
 	}
 }
 
-@media (min-width: @screen-md-min) { }
+/* Desktop */
+@media (min-width: @screen-md-min) {
+
+	/* Header */
+	.banner .navbar-nav { float: right; }
+	.navbar-brand { margin-left: 0 !important; }
+	.navbar-form { margin-top: 23px; }
+	.nav>li {
+		background: inherit;
+		border: none;
+	}
+}
 
 @media (min-width: @screen-lg-min) { }

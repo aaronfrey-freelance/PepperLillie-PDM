@@ -1,7 +1,3 @@
-<style type="text/css">
-	#map-canvas { height: 250px; }
-</style>
-
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
 
 <script type="text/javascript">
@@ -38,4 +34,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 </script>
 
-<div id="map-canvas"></div>
+<div class="hidden-xs">
+	<div class="blue-border" id="map-canvas"></div>
+	<div class="blue-border headquarters"><?php the_post_thumbnail(); ?></div>
+</div>
