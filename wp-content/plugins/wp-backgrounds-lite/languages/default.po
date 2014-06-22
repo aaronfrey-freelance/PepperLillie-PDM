@@ -1,0 +1,112 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WP Backgrounds Lite\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-07-17 13:14+0100\n"
+"PO-Revision-Date: 2012-07-17 13:14+0100\n"
+"Last-Translator: Peter Schönmann\n"
+"Language-Team: InoPlugs <support@inoplugs.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
+"X-Poedit-Basepath: C:\\xampp\\htdocs\\wp-content\\plugins\\wp-backgrounds-lite\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-Country: Austria\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-SearchPath-0: C:\\xampp\\htdocs\\wp-content\\plugins\\wp-backgrounds-lite\n"
+
+#: C:\xampp\htdocs\wp-content\plugins\wp-backgrounds-lite/inoplugs_background_plugin.php:58
+#: C:\xampp\htdocs\wp-content\plugins\wp-backgrounds-lite/inoplugs_background_plugin.php:91
+msgid "InoPlugs WP-Background Image"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\plugins\wp-backgrounds-lite/inoplugs_background_plugin.php:64
+#: C:\xampp\htdocs\wp-content\plugins\wp-backgrounds-lite/inoplugs_background_plugin.php:97
+msgid "Background Image"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\plugins\wp-backgrounds-lite/inoplugs_background_plugin.php:65
+msgid "Select an Image (internal or external url)"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\plugins\wp-backgrounds-lite/inoplugs_background_plugin.php:73
+#: C:\xampp\htdocs\wp-content\plugins\wp-backgrounds-lite/inoplugs_background_plugin.php:105
+msgid "Upload Image"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\plugins\wp-backgrounds-lite/inoplugs_background_plugin.php:76
+#: C:\xampp\htdocs\wp-content\plugins\wp-backgrounds-lite/inoplugs_background_plugin.php:108
+msgid "Select Background Image"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\plugins\wp-backgrounds-lite/inoplugs_background_plugin.php:81
+#: C:\xampp\htdocs\wp-content\plugins\wp-backgrounds-lite/inoplugs_background_plugin.php:113
+msgid "Apply Link to Background - enter the url"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\plugins\wp-backgrounds-lite/inoplugs_background_plugin.php:98
+msgid "Select a Image (internal or external url)"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\plugins\wp-backgrounds-lite/inoplugs_background_plugin.php:233
+msgid "WP-Backgrounds Lite"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\plugins\wp-backgrounds-lite/inoplugs_background_plugin.php:282
+#: C:\xampp\htdocs\wp-content\plugins\wp-backgrounds-lite/inoplugs_background_plugin.php:284
+msgid "Backgrounds Lite options saved."
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\plugins\wp-backgrounds-lite/inoplugs_background_plugin.php:295
+msgid "Backgrounds Lite Option Page"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\plugins\wp-backgrounds-lite/inoplugs_background_plugin.php:296
+msgid "Backgrounds Lite is the free version of <a href=\"http://inoplugs.com/wpbackgroundsII\">WP-Backgrounds II</a>. It offers much more features - among them html5 video, youtube, image and kenburns slider backgrounds and a custom login panel."
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\plugins\wp-backgrounds-lite/inoplugs_background_plugin.php:306
+msgid "Z-index value of background layer"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\plugins\wp-backgrounds-lite/inoplugs_background_plugin.php:310
+msgid "Enter the z-index value of the background layer (0 by default)."
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\plugins\wp-backgrounds-lite/inoplugs_background_plugin.php:319
+msgid "ID or class of the content container/wrapper"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\plugins\wp-backgrounds-lite/inoplugs_background_plugin.php:324
+msgid "Enter the ID or class of the content container/wrapper. Eg the default WP Theme TwentyEleven uses the '#page' element as content container."
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\plugins\wp-backgrounds-lite/inoplugs_background_plugin.php:333
+msgid "Z-index value of content layer"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\plugins\wp-backgrounds-lite/inoplugs_background_plugin.php:338
+msgid "Enter the z-index value of the background layer (5 by default)."
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\plugins\wp-backgrounds-lite/inoplugs_background_plugin.php:346
+msgid "Position of the content container/wrapper"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\plugins\wp-backgrounds-lite/inoplugs_background_plugin.php:351
+msgid "Enter the position of the content container/wrapper. Default value is 'relative'. Only change it if you know what you're doing."
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\plugins\wp-backgrounds-lite/inoplugs_background_plugin.php:359
+msgid "Body background color"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\plugins\wp-backgrounds-lite/inoplugs_background_plugin.php:364
+msgid "This option helps you to adjust the default body background color. Leave the field empty to deactivate this option."
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\plugins\wp-backgrounds-lite/inoplugs_background_plugin.php:376
+msgid "Save Changes"
+msgstr ""
+
