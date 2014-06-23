@@ -1,4 +1,4 @@
-<h1><?php the_title();?></h1>
+<h2>Contact Information</h2>
 <strong>Phone: </strong><?php echo get_option('phonenumber'); ?><br>
 <strong>Fax: </strong><?php echo get_option('faxnumber'); ?><br>
 

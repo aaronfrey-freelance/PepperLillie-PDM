@@ -20,6 +20,14 @@
   <div class="wrap container" role="document">
     <div class="content row">
 
+			<div class="blue-top col-md-10 col-md-offset-1">
+				<div class="blue-top-top">
+					<div class="blue-top-left pull-left"><h1><?php echo single_cat_title('', false) ? single_cat_title('', false) : get_the_title(); ?></h1></div>
+					<div class="blue-top-right pull-left"></div>
+				</div>
+				<div class="blue-top-bottom"></div>
+			</div>
+
 			<div class="center-content col-md-10 col-md-offset-1">
 
 	      <main class="main <?php echo roots_main_class(); ?>" role="main">

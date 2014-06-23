@@ -46,4 +46,25 @@ function editglobalcustomfields() {
     </form>
     </div>
     <?php
+
+    add_filter( 'wp_nav_menu_objects', 'wpse16243_wp_nav_menu_objects' );
+    function wpse16243_wp_nav_menu_objects( $sorted_menu_items )
+    {
+        foreach ( $sorted_menu_items as $menu_item ) {
+            if ( $menu_item->current ) {
+                $GLOBALS['wpse16243_title'] = $menu_item->title;
+                break;
+            }
+        }
+        return $sorted_menu_items;
+    }
+
+    add_filter( 'single_cat_title', 'wpse16243_single_cat_title' );
+    function wpse16243_single_cat_title( $cat_title )
+    {
+        if ( isset( $GLOBALS['wpse16243_title'] ) ) {
+            return $GLOBALS['wpse16243_title'];
+        }
+        return $cat_title;
+    }
 }
