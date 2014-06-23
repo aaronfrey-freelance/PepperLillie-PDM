@@ -26,6 +26,7 @@ h2 {
 	font-size: 22px;
 	line-height: 26px;
 	margin: 35px 0 26px 0;
+	text-transform: uppercase;
 }
 
 h3 {
@@ -116,7 +117,16 @@ body { font-family: 'Roboto', sans-serif; }
 	opacity: 1;
 	overflow: auto;
 }
-
+.entry-content {
+	font-size: 16px;
+	h2 {
+		text-transform: none;
+		color: #005072;
+	}
+	img {
+		margin-left: 30px;
+	}
+}
 
 
 /* ==========================================================================
@@ -271,7 +281,8 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
 	.center-content {
 		opacity: .9;
 		margin-bottom: 51px;
-		min-height: 517px;
+		min-height: 467px;
+		padding-bottom: 50px;
 	}
 
 	/* Footer */
@@ -295,6 +306,28 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
 
 	/* Content */
 	.blue-top { background: none; }
+
+	/* Sidebar */
+	aside.about {
+		background: #e5e5e4;
+		right: -15px;
+	}
+	#sidebar-category {
+		margin-top: 35px;
+		li {
+			padding-left: 25px;
+			&.active {
+				a { color: #2e80c1; }
+			}
+			a {
+				background: url('../img/red-cross.png') left center no-repeat;
+				padding-left: 15px;
+				font-weight: 700;
+				color: #666;
+				line-height: 31px;
+			}
+		}
+	}
 }
 
 @media (min-width: @screen-lg-min) { }
