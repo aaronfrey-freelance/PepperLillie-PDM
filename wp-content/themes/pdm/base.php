@@ -20,9 +20,16 @@
   <div class="wrap container" role="document">
     <div class="content row">
 
+			<?php
+			$category = get_the_category();
+			$cat_name = $category[0]->cat_name;
+			$title = $cat_name ? $cat_name : get_the_title();
+			$title = $title ? $title : single_cat_title('', false);
+			?>
+
 			<div class="blue-top col-md-10 col-md-offset-1">
 				<div class="blue-top-top">
-					<div class="blue-top-left pull-left"><h1><?php echo single_cat_title('', false) ? single_cat_title('', false) : get_the_title(); ?></h1></div>
+					<div class="blue-top-left pull-left"><h1><?php echo $title; ?></h1></div>
 					<div class="blue-top-right pull-left"></div>
 				</div>
 				<div class="blue-top-bottom"></div>
