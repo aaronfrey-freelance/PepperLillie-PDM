@@ -1,4 +1,4 @@
-<ul id="sidebar-category" class="hidden-sm hidden-xs">
+<ul id="sidebar-category" class="hidden-xs">
 <?php
 $category = get_the_category();
 $cat_id = $category[0]->cat_ID;

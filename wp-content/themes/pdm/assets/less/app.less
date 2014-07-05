@@ -99,7 +99,20 @@ body { font-family: 'Roboto', sans-serif; background: grey; }
 .blue-top {
 	background: #01364d;
 	padding: 0;
-	.blue-top-top { overflow: auto; }
+	.blue-top-top {
+		overflow: auto;
+		.dropdown {
+			color: #fff;
+			text-transform: uppercase;
+			text-decoration: none;
+			font-size: 14px;
+			font-weight: 700;
+			padding-right: 20px;
+			margin-right: 1%;
+			line-height: 35px;
+			background: url('../img/arrows/arrow_red_down.png') right center no-repeat;
+		}
+	}
 	.blue-top-left {
 		background: #005072;
 		height: 35px;
@@ -124,13 +137,43 @@ body { font-family: 'Roboto', sans-serif; background: grey; }
 }
 .entry-content {
 	font-size: 16px;
+	a { color: #005072; }
 	h2 {
+		margin: 0 0 25px 0;
 		text-transform: none;
 		color: #005072;
 	}
 	img {
 		margin-left: 30px;
 	}
+	p { margin: 0; padding-bottom: 25px; }
+
+	ul {
+	    list-style: none;
+	    padding: 0;
+	    margin: 0;
+	}
+
+	li {
+	    padding-left: 1em;
+	    text-indent: -.7em;
+	    padding-bottom: 20px;
+	}
+
+	li:before {
+	    content: "• ";
+	    color: #b32017;
+	}
+
+}
+
+// Custom Post Styles
+.post-23 {
+	h2 {
+		margin: 0;
+		&.entry-title { margin: 35px 0 26px 0; }
+	}
+	ul { margin-top: -25px; }
 }
 
 
@@ -264,6 +307,28 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
 /* Tablet */
 @media (min-width: @screen-sm-min) {
 
+	/* Sidebar */
+	#sidebar-category {
+		margin-top: 35px;
+		li {
+			padding-left: 25px;
+			&.active {
+				a { color: #2e80c1; }
+			}
+			a {
+				background: url('../img/red-cross.png') left center no-repeat;
+				padding-left: 15px;
+				font-weight: 700;
+				color: #666;
+				line-height: 31px;
+			}
+		}
+	}
+	aside.about, aside.projects {
+		background: #e5e5e4;
+		right: -15px;
+	}
+
 	/* Header */
 	header {
 		.container { width: 100%; }
@@ -290,7 +355,11 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
 	}
 
 	/* Content */
-	.blue-top { margin-top: 73px; }
+	.blue-top {
+		margin-top: 73px;
+		background: none;
+	}
+
 	.center-content {
 		opacity: .9;
 		margin-bottom: 51px;
@@ -315,31 +384,6 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
 	.nav>li {
 		background: inherit;
 		border: none;
-	}
-
-	/* Content */
-	.blue-top { background: none; }
-
-	/* Sidebar */
-	aside.about, aside.projects {
-		background: #e5e5e4;
-		right: -15px;
-	}
-	#sidebar-category {
-		margin-top: 35px;
-		li {
-			padding-left: 25px;
-			&.active {
-				a { color: #2e80c1; }
-			}
-			a {
-				background: url('../img/red-cross.png') left center no-repeat;
-				padding-left: 15px;
-				font-weight: 700;
-				color: #666;
-				line-height: 31px;
-			}
-		}
 	}
 }
 

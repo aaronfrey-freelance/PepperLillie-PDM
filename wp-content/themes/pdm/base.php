@@ -31,6 +31,7 @@
 				<div class="blue-top-top">
 					<div class="blue-top-left pull-left"><h1><?php echo $title; ?></h1></div>
 					<div class="blue-top-right pull-left"></div>
+					<a href="#" class="pull-right dropdown hidden-lg hidden-md hidden-sm">Show Menu</a>
 				</div>
 				<div class="blue-top-bottom"></div>
 			</div>
