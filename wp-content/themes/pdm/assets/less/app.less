@@ -40,14 +40,31 @@ form {
 	p { font-weight: 700; }
 
 	input[type="text"],
+	input[type="email"]
+	{
+		height: 25px;
+	}
+
+	input[type="text"],
 	input[type="email"],
 	textarea
 	{
-	    opacity: 1;
+		border: 1px solid #c1c1c1;
 	    width: 100%;
+	    margin-top: 3px;
+	}
+	.wpcf7-form-control {
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		border-radius: 5px;
 	}
 	.wpcf7-submit {
 		width: auto;
+		background: #1f518b;
+		color: #fff;
+		text-transform: uppercase;
+		padding: 3px 36px;
+		border: none;
 	}
 }
 
@@ -131,7 +148,7 @@ body { font-family: 'Roboto', sans-serif; background: grey; }
 	.blue-top-bottom { background: #005072; height: 15px; }
 }
 .center-content {
-	background: #fff;
+	background: #ebebea;
 	opacity: 1;
 	overflow: auto;
 }
@@ -167,6 +184,34 @@ body { font-family: 'Roboto', sans-serif; background: grey; }
 
 }
 
+.projects-index {
+	margin-bottom: 35px;
+	a {
+		text-decoration: none;
+		text-transform: uppercase;
+		color: #005072;
+		font-weight: 700;
+		font-size: 13px;
+		article {
+			height: 220px;
+			background: #e3e0e0;
+			margin-top: 40px;
+			.project-image {
+				height: 147px;
+				background: #005072;
+				overflow: hidden;
+				img {
+					width: 100%;
+					height: auto;
+				}
+			}
+			.entry-title {
+				padding: 15px;
+			}
+		}
+	}
+}
+
 // Custom Post Styles
 .post-23 {
 	h2 {
@@ -174,6 +219,20 @@ body { font-family: 'Roboto', sans-serif; background: grey; }
 		&.entry-title { margin: 35px 0 26px 0; }
 	}
 	ul { margin-top: -25px; }
+}
+
+.page-id-10 {
+	.entrytext {
+		a {
+			text-transform: uppercase;
+			color: #005072;
+			font-size: 16px;
+			padding-left: 20px;
+			margin-bottom: 20px;
+			display: inline-block;
+			background: url('../img/arrows/arrow_red_right.png') left center no-repeat;
+		}
+	}
 }
 
 
@@ -210,8 +269,8 @@ body { font-family: 'Roboto', sans-serif; background: grey; }
    Contact
    ========================================================================== */
 
-#map-canvas { height: 220px; width: 306px; margin-bottom: 23px; margin-top: 59px;}
-.headquarters { width: 306px; }
+#map-canvas { height: 220px; width: 100%; margin-bottom: 23px; margin-top: 59px;}
+.headquarters img { width: 100%; height: auto; }
 .blue-border { border: 1px solid #2e80c1; }
 
 /* ==========================================================================
