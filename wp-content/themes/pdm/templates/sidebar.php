@@ -7,6 +7,8 @@ if(in_category(3) || in_category(4)) {
 } else if (is_page(10)) {
 	// Display custom contact page sidebar
 	get_sidebar('contact');
+} else if(in_category(6)) {
+	get_sidebar('careers');
 } else {
 	dynamic_sidebar('sidebar-primary');
 }
