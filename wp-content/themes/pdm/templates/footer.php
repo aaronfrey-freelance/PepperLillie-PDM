@@ -2,7 +2,7 @@
 
 <div id="teasers">
 
-	<div class="blue-box">
+	<div class="blue-box" id="blue-box">
 
 		<div class="blue-border-corner"></div>
 		<div class="blue-border-top"></div>
@@ -16,7 +16,7 @@
 		</div>
 	</div>
 
-	<div class="white-box">
+	<div class="white-box hidden-xs" id="white-box">
 
 		<div class="white-border-corner"></div>
 
@@ -41,7 +41,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				<ul>
+				<ul id="teaser-links">
 					<li><a href="#">Featured Project</a></li>
 					<li><a href="#">Services Spotlight</a></li>
 					<li><a href="#">Recent News</a></li>

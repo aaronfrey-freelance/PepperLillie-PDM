@@ -135,9 +135,9 @@ body.home {
 	background: #fff;
 
 	.blue-box {
-
+		// display: none;
 		position: absolute;
-		bottom: 53px;
+		bottom: 99px;
 		width: 100%;
 		overflow: hidden;
 
@@ -178,9 +178,9 @@ body.home {
 
 	.white-box {
 		position: absolute;
+		bottom: 99px;
 		display: none;
-		bottom: 67px;
-		left: 56px;
+
 		.white-border-corner {
 			height: 11px;
 			width: 11px;
@@ -212,8 +212,6 @@ body.home {
 		}
 		.white-box-content {
 			background: #fff;
-			width: 608px;
-			height: 263px;
 		}
 	}
 
@@ -581,7 +579,7 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
 	body.home {
 
 		.blue-box {
-			bottom: 84px;
+			bottom: 116px;
 			left: 57px;
 			.blue-box-content {
 				width: 608px;
@@ -596,16 +594,37 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
 			}
 		}
 
+		.white-box {
+			left: 56px;
+			.white-box-content {
+				width: 608px;
+				height: 263px;
+			}
+		}
+
 		.red-footer {
 			height: 47px;
 			.container {
-				padding: inherit;
-				ul {
-					li {
-						float: left;
-						padding-right: 27px;
-						a {
-							line-height: 47px;
+				padding: 0;
+				margin: 0;
+				.row {
+					padding: 0;
+					margin: 0;
+					ul {
+						position: absolute;
+						left: 57px;
+						li {
+							float: left;
+							padding: 0 14px;
+							a {
+								line-height: 47px;
+							}
+							&.active {
+								background: #fff;
+								a {
+									color: #000;
+								}
+							}
 						}
 					}
 				}
