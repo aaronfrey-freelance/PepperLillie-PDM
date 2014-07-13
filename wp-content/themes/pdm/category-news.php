@@ -16,7 +16,6 @@
 		  <div class="entry-summary">
 		    <?php the_excerpt(); ?>
 		  </div>
-		  <h2><a href="<?php the_permalink(); ?>" class="read-more">Read More</a></h2>
 		</article>
 	<?php endwhile; ?>
 

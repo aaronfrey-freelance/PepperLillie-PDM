@@ -104,9 +104,7 @@
 
 					$the_query = new WP_Query( $args );
 
-					while ( $the_query->have_posts() ) : $the_query->the_post();
-						$excerpt = get_the_excerpt();
-					?>
+					while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 						<div>
 							<div class="pull-left teaser-title">
 								<h1>Recent News</h1>
@@ -114,8 +112,7 @@
 							</div>
 							<div class="pull-left teaser-image">
 								<h2><?php the_title(); ?></h2>
-								<p><?php echo string_limit_words($excerpt, 35) . '...'; ?></p>
-								<a href="<?php the_permalink(); ?>">Read More</a>
+								<p><?php the_excerpt(); ?></p>
 							</div>
 						</div>
 					<?php endwhile;

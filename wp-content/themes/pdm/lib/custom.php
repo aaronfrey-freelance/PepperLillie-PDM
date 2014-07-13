@@ -69,10 +69,13 @@ function editglobalcustomfields() {
     }
 }
 
-function string_limit_words($string, $word_limit)
-{
-  $words = explode(' ', $string, ($word_limit + 1));
-  if(count($words) > $word_limit)
-  array_pop($words);
-  return implode(' ', $words);
+// Excerpt Functions
+function custom_excerpt_length( $length ) {
+    return 35;
 }
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+
+function new_excerpt_more( $more ) {
+    return '[...]<a class="read-more" href="'. get_permalink( get_the_ID() ) . '">' . __('Read more', 'your-text-domain') . '</a>';
+}
+add_filter( 'excerpt_more', 'new_excerpt_more' );
