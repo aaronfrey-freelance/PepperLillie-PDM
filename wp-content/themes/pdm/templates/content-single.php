@@ -4,6 +4,7 @@
       <h2 class="entry-title"><?php the_title(); ?></h2>
     </header>
     <div class="entry-content">
+      <h3><?php the_field('project_location'); ?></h3>
       <?php the_content(); ?>
     </div>
     <footer>
