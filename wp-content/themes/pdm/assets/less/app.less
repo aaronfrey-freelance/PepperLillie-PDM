@@ -101,7 +101,7 @@ body { font-family: 'Roboto', sans-serif; background: grey; height: 100%; }
 .banner { border: none; margin-bottom: 0; }
 .navbar-header {
 	a {
-		.glyphicon { color: #a6acb0; font-size: 25px; margin-top: 25px; margin-right: 12px; }
+		.glyphicon { color: #a6acb0; font-size: 25px; margin-top: 28px; margin-right: 12px; }
 	}
 }
 .navbar-brand {
@@ -636,16 +636,16 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
 	#sidebar-category {
 		margin-top: 35px;
 		li {
-			padding-left: 25px;
+			padding-left: 15px;
+			margin-bottom: 20px;
+			background: url('../img/red-cross.png') left 6px no-repeat;
 			&.active {
 				a { color: #2e80c1; }
 			}
 			a {
-				background: url('../img/red-cross.png') left center no-repeat;
-				padding-left: 15px;
 				font-weight: 700;
 				color: #666;
-				line-height: 31px;
+				line-height: 20px;
 			}
 		}
 	}
@@ -671,7 +671,15 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
 		&:last-child { border: none; }
 	}
 	.navbar-form {
-		input[type="search"] { background: #a2abb2; color: #fff; width: 214px; padding-right: 27px; }
+		input[type="search"] {
+			background: #a2abb2;
+			color: #fff;
+			width: 214px;
+			padding-right: 27px;
+			-webkit-border-radius: 0;
+			-moz-border-radius: 0;
+			border-radius: 0;
+		}
 		.glyphicon { left: 210px; top: 5px; font-size: 19px; color: #fff; }
 		::-webkit-input-placeholder { color: #fff; }
 		:-moz-placeholder { color: #fff; }
@@ -688,7 +696,7 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
 	.center-content {
 		opacity: .9;
 		margin-bottom: 51px;
-		min-height: 467px;
+		min-height: 300px;
 		padding-bottom: 50px;
 	}
 
@@ -712,6 +720,8 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
 	.nav>li {
 		background: inherit;
 		border: none;
+		width: auto;
+		text-align: left;
 	}
 }
 
