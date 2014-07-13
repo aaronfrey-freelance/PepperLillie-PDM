@@ -19,15 +19,19 @@ $(function() {
   });
 
   /* Teaser Links */
-  $('#teaser-links a').on('click', function(e) {
+  $('#teaser-links li').on('click', function(e) {
     e.preventDefault();
 
     $('#white-box').show();
     $('#blue-box').hide();
 
     var btn = $(this);
-    btn.parent('li').siblings('li').removeClass('active');
-    btn.parent('li').addClass('active');
+    btn.siblings('li').removeClass('active');
+    btn.addClass('active');
+
+    var pane = btn.find('a').data('type');
+
+    $('#'+pane).show().siblings('div').hide();
   });
 
 });

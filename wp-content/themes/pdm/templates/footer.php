@@ -30,7 +30,101 @@
 				<div class="white-border-left"></div>
 				<div class="white-border-bottom-left"></div>
 			</div>
-			<div class="white-box-content pull-left"></div>
+			<div class="white-box-content pull-left">
+
+				<!-- Get the Featured Project -->
+				<div class="teaser-pane" id="teaser-project">
+					<?php
+
+					$args = array(
+				        'category_name' => 'projects',
+				        'posts_per_page' => 1,
+				        'tag' => 'featured',
+				    );
+
+					$the_query = new WP_Query( $args );
+
+					while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+						<div>
+							<div class="pull-left teaser-title">
+								<h2><?php the_title(); ?></h2>
+								<a href="<?php the_permalink(); ?>">Learn More ></a>
+							</div>
+							<div class="pull-left teaser-image">
+								<?php the_post_thumbnail('teaser'); ?>
+							</div>
+						</div>
+					<?php endwhile;
+
+					wp_reset_postdata()
+
+					?>
+				</div>
+
+				<!-- Get the Featured Service -->
+				<div class="teaser-pane" id="teaser-service">
+					<?php
+
+					$args = array(
+				        'category_name' => 'services',
+				        'posts_per_page' => 1,
+				        'tag' => 'featured',
+				    );
+
+					$the_query = new WP_Query( $args );
+
+					while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+						<div>
+							<div class="pull-left teaser-title">
+								<h1>Services Spotlight:</h1>
+								<h2><?php the_title(); ?></h2>
+								<a href="<?php the_permalink(); ?>">Learn More ></a>
+							</div>
+							<div class="pull-left teaser-image">
+								<?php the_post_thumbnail('teaser'); ?>
+							</div>
+						</div>
+					<?php endwhile;
+
+					wp_reset_postdata()
+
+					?>
+				</div>
+
+				<!-- Get the Recent News -->
+				<div class="teaser-pane" id="teaser-news">
+					<?php
+
+					$args = array(
+				        'category_name' => 'news',
+				        'posts_per_page' => 1,
+				         'orderby' => 'date',
+				         'order' => 'DESC'
+				    );
+
+					$the_query = new WP_Query( $args );
+
+					while ( $the_query->have_posts() ) : $the_query->the_post();
+						$excerpt = get_the_excerpt();
+					?>
+						<div>
+							<div class="pull-left teaser-title">
+								<h1>Recent News</h1>
+								<a href="<?php echo get_category_link(7); ?>">More News ></a>
+							</div>
+							<div class="pull-left teaser-image">
+								<h2><?php the_title(); ?></h2>
+								<p><?php echo string_limit_words($excerpt, 35) . '...'; ?></p>
+								<a href="<?php the_permalink(); ?>">Read More</a>
+							</div>
+						</div>
+					<?php endwhile;
+
+					wp_reset_postdata()
+
+					?>
+				</div>
+			</div>
 		</div>
 
 	</div>
@@ -42,9 +136,9 @@
 		<div class="row">
 			<div class="col-md-12">
 				<ul id="teaser-links">
-					<li><a href="#">Featured Project</a></li>
-					<li><a href="#">Services Spotlight</a></li>
-					<li><a href="#">Recent News</a></li>
+					<li><a data-type="teaser-project">Featured Project</a></li>
+					<li><a data-type="teaser-service">Services Spotlight</a></li>
+					<li><a data-type="teaser-news">Recent News</a></li>
 				</ul>
 			</div>
 		</div>
