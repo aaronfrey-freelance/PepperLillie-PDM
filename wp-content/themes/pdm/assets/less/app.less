@@ -73,8 +73,25 @@ form {
    Base
    ========================================================================== */
 
-body { font-family: 'Roboto', sans-serif; background: grey; }
+html { height: 100%; }
 
+body { font-family: 'Roboto', sans-serif; background: grey; height: 100%; }
+
+#wrap {
+  min-height: 100%;
+  height: auto;
+  /* Negative indent footer by its height */
+  margin: 0 auto -52px;
+  /* Pad bottom by footer height */
+  padding: 0 0 52px;
+}
+
+.home #wrap {
+  /* Negative indent footer by its height */
+  margin: 0 auto -99px;
+  /* Pad bottom by footer height */
+  padding: 0 0 99px;
+}
 
 
 /* ==========================================================================
@@ -109,6 +126,120 @@ body { font-family: 'Roboto', sans-serif; background: grey; }
 }
 .navbar-toggle { margin-top: 20px; }
 .navbar-collapse { border: none; }
+
+/* ==========================================================================
+   Home
+   ========================================================================== */
+body.home {
+
+	background: #fff;
+
+	.blue-box {
+
+		position: absolute;
+		bottom: 53px;
+		width: 100%;
+		overflow: hidden;
+
+		.blue-border-corner {
+			height: 12px;
+			width: 11px;
+			background: url('../img/border/blue-border-corner.gif') no-repeat;
+			position: absolute;
+		}
+		.blue-border-left {
+			width: 11px;
+			height: 100%;
+			position: absolute;
+			background: url('../img/border/blue-border-left.jpg') repeat-y;
+		}
+		.blue-border-top {
+			width: 100%;
+			height: 12px;
+			margin-left: 11px;
+			background: url('../img/border/blue-border-top.jpg') repeat-x;
+		}
+		.blue-box-content {
+			background: #196180;
+			width: 100%;
+			padding: 32px 25px;
+			margin-left: 11px;
+			color: #fff;
+			font-size: 20px;
+			line-height: 26px;
+			a {
+				text-transform: uppercase;
+				font-style: italic;
+				color: #fff;
+				font-size: 14px;
+			}
+		}
+	}
+
+	.white-box {
+		position: absolute;
+		display: none;
+		bottom: 67px;
+		left: 56px;
+		.white-border-corner {
+			height: 11px;
+			width: 11px;
+			margin-left: 1px;
+			background: url('../img/border/grey-border-top-left.png') no-repeat;
+			position: absolute;
+		}
+		.white-border-left {
+			width: 12px;
+			height: 236px;
+			background: url('../img/border/grey-border-left.png') repeat-y;
+		}
+		.white-border-bottom-left {
+			width: 11px;
+			margin-left: 1px;
+			height: 27px;
+			background: url('../img/border/grey-border-bottom-left.png') right top no-repeat #fff;
+		}
+		.white-border-top-right {
+			width: 12px;
+			height: 11px;
+			background: url('../img/border/grey-border-top-right.png') no-repeat;
+		}
+		.white-border-top {
+			width: 597px;
+			height: 11px;
+			margin-left: 11px;
+			background: url('../img/border/grey-border-top.png') repeat-x;
+		}
+		.white-box-content {
+			background: #fff;
+			width: 608px;
+			height: 263px;
+		}
+	}
+
+	.red-footer {
+		width: 100%;
+		background: #b32017;
+		margin: 0;
+		.container {
+			padding: 0 35px;
+			ul {
+				list-style: none;
+				overflow: auto;
+				margin-bottom: 0;
+			}
+			a{
+				font-family: 'Roboto Slab', serif;
+				font-size: 14px;
+				text-transform: uppercase;
+				color: #fff;
+				line-height: 38px;
+				text-decoration: none;
+			}
+		}
+	}
+}
+
 
 /* ==========================================================================
    Content
@@ -359,6 +490,9 @@ body { font-family: 'Roboto', sans-serif; background: grey; }
 	color: #fff;
 	font-size: 13px;
 	min-height: 52px;
+	.container {
+		padding: 0 35px;
+	}
 	a { display: inline-block; text-decoration: none; }
 	.address-footer {
 		margin-top: 14px;
@@ -443,6 +577,42 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
 /* Tablet */
 @media (min-width: @screen-sm-min) {
 
+	/* Home */
+	body.home {
+
+		.blue-box {
+			bottom: 84px;
+			left: 57px;
+			.blue-box-content {
+				width: 608px;
+				height: 245px;
+				opacity: 0.8;
+			}
+			.blue-border-left {
+				height: 245px;
+			}
+			.blue-border-top {
+				width: 608px;
+			}
+		}
+
+		.red-footer {
+			height: 47px;
+			.container {
+				padding: inherit;
+				ul {
+					li {
+						float: left;
+						padding-right: 27px;
+						a {
+							line-height: 47px;
+						}
+					}
+				}
+			}
+		}
+	}
+
 	/* Sidebar */
 	#sidebar-category {
 		margin-top: 35px;
@@ -505,6 +675,9 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
 
 	/* Footer */
 	.content-info {
+		.container {
+			padding: inherit;
+		}
 		.address-footer { width: 100%; }
 		.social-footer { float: right; padding-bottom: 0; }
 	}

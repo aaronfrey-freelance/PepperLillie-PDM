@@ -1,3 +1,58 @@
+<?php if(is_page('home')) : ?>
+
+<div id="teasers">
+
+	<div class="blue-box">
+
+		<div class="blue-border-corner"></div>
+		<div class="blue-border-top"></div>
+
+		<div>
+			<div class="blue-border-left pull-left"></div>
+			<div class="blue-box-content pull-left">
+				<p>Philadelphia D&M (PDM) is the tri-state area’s premier construction subcontractor — specializing in exterior framing, EIFS, drywall, fabricated drywall shapes, rough and finish carpentry, acoustical and specialty ceilings, millwork, spray foam insulation, and spray fireproofing.</p>
+				<a href="#">Learn More</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="white-box">
+
+		<div class="white-border-corner"></div>
+
+		<div class="pull-left">
+			<div class="white-border-top pull-left"></div>
+			<div class="white-border-top-right pull-left"></div>
+		</div>
+
+		<div>
+			<div class="pull-left">
+				<div class="white-border-left"></div>
+				<div class="white-border-bottom-left"></div>
+			</div>
+			<div class="white-box-content pull-left"></div>
+		</div>
+
+	</div>
+
+</div>
+
+<div class="red-footer">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<ul>
+					<li><a href="#">Featured Project</a></li>
+					<li><a href="#">Services Spotlight</a></li>
+					<li><a href="#">Recent News</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+<?php endif; ?>
+
 <footer class="content-info" role="contentinfo">
 
   <div class="container">
