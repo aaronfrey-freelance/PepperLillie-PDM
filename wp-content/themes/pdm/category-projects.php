@@ -9,7 +9,7 @@
 		  <article <?php post_class(); ?>>
 			  <div class="entry-summary">
 			    <div class="project-image">
-			    	 <?php the_post_thumbnail(); ?>
+			    	 <?php the_post_thumbnail('project-landing'); ?>
 			    </div>
 			    <div class="entry-title">
 			    	<?php the_title(); ?>

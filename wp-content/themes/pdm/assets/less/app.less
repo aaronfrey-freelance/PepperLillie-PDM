@@ -645,6 +645,34 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
 /* Tablet */
 @media (min-width: @screen-sm-min) {
 
+	/* Sidebar */
+	#sidebar-category {
+		margin-top: 35px;
+		margin-left: 20px;
+		li {
+			padding-left: 15px;
+			margin-bottom: 20px;
+			background: url('../img/red-cross.png') left 6px no-repeat;
+			&.active {
+				a { color: #2e80c1; }
+			}
+			a {
+				font-weight: 700;
+				color: #666;
+				line-height: 20px;
+			}
+		}
+	}
+	.drop-down #sidebar-category {
+		overflow: auto;
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+	aside.about, aside.projects {
+		background: #e5e5e4;
+		right: -15px;
+	}
+
 	/* Home */
 	body.home {
 
@@ -702,29 +730,6 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
 		}
 	}
 
-	/* Sidebar */
-	#sidebar-category {
-		margin-top: 35px;
-		margin-left: 20px;
-		li {
-			padding-left: 15px;
-			margin-bottom: 20px;
-			background: url('../img/red-cross.png') left 6px no-repeat;
-			&.active {
-				a { color: #2e80c1; }
-			}
-			a {
-				font-weight: 700;
-				color: #666;
-				line-height: 20px;
-			}
-		}
-	}
-	aside.about, aside.projects {
-		background: #e5e5e4;
-		right: -15px;
-	}
-
 	/* Header */
 	header {
 		.container { width: 100%; }
@@ -761,7 +766,6 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
 	/* Content */
 	.blue-top {
 		margin-top: 73px;
-		background: none;
 	}
 
 	.center-content {
@@ -793,6 +797,10 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
 		border: none;
 		width: auto;
 		text-align: left;
+	}
+
+	.blue-top {
+		background: none;
 	}
 }
 

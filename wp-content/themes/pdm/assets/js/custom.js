@@ -14,9 +14,9 @@ $(function() {
 
   resizeSidebar();
 
-  $(window).resize(function() {
-    resizeSidebar();
-  });
+  // $(window).resize(function() {
+  //   resizeSidebar();
+  // });
 
   /* Teaser Links */
   $('#teaser-links li').on('click', function(e) {
