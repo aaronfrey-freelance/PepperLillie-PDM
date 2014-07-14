@@ -50,7 +50,10 @@
 	    				<?php include roots_template_path(); ?>
 	    			</main><!-- /.main -->
 
-	    			<?php $gallery = get_field('gallery_name'); ?>
+	    			<?php
+	    				$gallery = get_field('gallery_name');
+	    				$singular = is_singular();
+	    			?>
 
 	    			<?php if (roots_display_sidebar()) : ?>
 	    			<aside class=" hidden-sm hidden-xs sidebar <?php echo roots_sidebar_class(); ?> <?php echo strtolower($cat_name); ?>" role="complementary">
@@ -61,7 +64,7 @@
 					<?php
 						global $wpdb;
 						$results = $wpdb->get_results( "SELECT * FROM wp_ngg_gallery WHERE title = '$gallery'", OBJECT );
-						if(count($results)) : ?>
+						if($singular && count($results)) : ?>
 
 							<div class="hidden-xs">
 							<?php $gid = $results[0]->gid;
