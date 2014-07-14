@@ -61,11 +61,13 @@
 					<?php
 						global $wpdb;
 						$results = $wpdb->get_results( "SELECT * FROM wp_ngg_gallery WHERE title = '$gallery'", OBJECT );
-						if(count($results))
-						{
-							$gid = $results[0]->gid;
-							echo do_shortcode("[nggallery id=$gid w=600 h=450]");
-						}
+						if(count($results)) : ?>
+
+							<div class="hidden-xs">
+							<?php $gid = $results[0]->gid;
+							echo do_shortcode("[nggallery id=$gid w=600 h=450]"); ?>
+							</div>
+						<?php endif;
 					?>
 
 		    	</div>
