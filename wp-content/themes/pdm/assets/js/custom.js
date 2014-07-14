@@ -1,12 +1,10 @@
 jQuery(function() {
 
   function resizeSidebar() {
-    var center_content_height = jQuery('.center-content').outerHeight();
-    var padding_bottom = jQuery('.center-content').css('padding-bottom');
+    var center_content_height = jQuery('.center-content .main').outerHeight();
 
     if(center_content_height > jQuery('aside.sidebar').outerHeight()) {
-      jQuery('aside.sidebar').height(center_content_height);
-      //jQuery('aside.sidebar').css('margin-bottom', -parseInt(padding_bottom, 10));
+      jQuery('aside.sidebar').height(center_content_height + 50);
     } else {
       jQuery('aside.sidebar').height('auto');
     }
