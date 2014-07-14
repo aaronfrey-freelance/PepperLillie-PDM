@@ -34,4 +34,24 @@ $(function() {
     $('#'+pane).show().siblings('div').hide();
   });
 
+  // Resize project Images
+  $(window).resize(function() {
+    // Get project images
+    $('div.project-image').each(function( index ) {
+      var container = $(this);
+      var containerRatio = container.height() / container.width();
+      var img = container.find('img');
+      var imgRatio = img.height() / img.width();
+
+      if(containerRatio > imgRatio) {
+        img.css('height', '100%');
+        img.css('width', 'auto');
+      } else {
+        img.css('height', 'auto');
+        img.css('width', '100%');
+      }
+    });
+
+  });
+
 });
