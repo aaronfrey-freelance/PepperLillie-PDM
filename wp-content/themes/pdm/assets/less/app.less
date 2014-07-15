@@ -145,6 +145,8 @@ body.category-news {
 	height: 81px;
 	width: 146px;
 	display: block;
+	padding: 0;
+	margin-left: 30px;
 	background: url('../img/logo.png') no-repeat;
 }
 .navbar-nav {
@@ -351,7 +353,7 @@ body.home {
 		background: #005072;
 		height: 35px;
 		width: 261px;
-		padding: 15px 0 0 42px;
+		padding: 15px 0 0 30px;
 		overflow: hidden;
 	}
 	.blue-top-right {
@@ -682,8 +684,85 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
 @media (min-width: @screen-sm-min) {
 
 	/* Slideshow */
-	.slideshowlink {
-		display: none;
+	.image-slider {
+		background: #eaeae9;
+		margin-bottom: 50px;
+		padding: 0;
+		overflow: hidden;
+		.slideshowlink {
+			display: none;
+		}
+		.slider-grey-bar {
+			height: 55px;
+			background: #9b9b9b;
+			color: #fff;
+			padding: 20px 0 0 30px;
+			.slider-header {
+				font-size: 18px;
+				line-height: 15px;
+				text-transform: uppercase;
+				font-family: 'Roboto Slab', serif;
+				padding-right: 10px;
+				border-right: 2px solid #fff;
+				margin-right: 10px;
+			}
+			.slider-sub-header {
+				font-weight: 500;
+				font-size: 14px;
+			}
+		}
+		.slider-content {
+			position: relative;
+			.advance-bar {
+				width: 48px;
+				background: #000;
+				height: 107px;
+				opacity: 0.6;
+				z-index: 1;
+				position: absolute;
+				top: 35px;
+				cursor: pointer;
+				&.right {
+					right: 0;
+				}
+			}
+			.advance-arrow {
+				position: absolute;
+				height: 18px;
+				width: 14px;
+				top: 79px;
+				z-index: 1;
+				&.left {
+					left: 17px;
+					background: url('../img/arrows/arrow_white_left.png') no-repeat;
+				}
+				&.right {
+					right: 17px;
+					background: url('../img/arrows/arrow_white_right.png') no-repeat;
+				}
+			}
+		}
+		.ngg-galleryoverview {
+			width: 9999px;
+			margin: 0;
+			.ngg-gallery-thumbnail-box {
+				margin-right: 1px;
+				height: 175px;
+				.ngg-gallery-thumbnail {
+					img {
+						border: none;
+						padding: 0;
+						margin: 0;
+						height: auto;
+						width: 265px;
+					}
+				}
+			}
+		}
+		.slider-bottom {
+			height: 42px;
+			background: #eaeae9;
+		}
 	}
 
 	/* Sidebar */
@@ -810,7 +889,6 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
 
 	.center-content {
 		opacity: .9;
-		margin-bottom: 51px;
 		min-height: 350px;
 	}
 
@@ -829,7 +907,7 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
 
 	/* Header */
 	.banner .navbar-nav { float: right; }
-	.navbar-brand { margin-left: 0 !important; }
+	.navbar-brand { margin-left: 15px !important; }
 	.navbar-form { margin-top: 23px; }
 	.nav>li {
 		background: inherit;

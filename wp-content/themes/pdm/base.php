@@ -61,19 +61,26 @@
 	    			</aside><!-- /.sidebar -->
 	    			<?php endif; ?>
 
-					<?php
-						global $wpdb;
-						$results = $wpdb->get_results( "SELECT * FROM wp_ngg_gallery WHERE title = '$gallery'", OBJECT );
-						if($singular && count($results)) : ?>
-
-							<div class="hidden-xs">
-							<?php $gid = $results[0]->gid;
-							echo do_shortcode("[nggallery id=$gid w=600 h=450]"); ?>
-							</div>
-						<?php endif;
-					?>
-
 		    	</div>
+
+				<div class="col-md-10 col-md-offset-1 image-slider hidden-xs">
+		    		<?php global $wpdb;
+					$results = $wpdb->get_results( "SELECT * FROM wp_ngg_gallery WHERE title = '$gallery'", OBJECT );
+					if($singular && count($results)) : $gid = $results[0]->gid; ?>
+					<div class="slider-grey-bar">
+						<div class="slider-header pull-left">Project Gallery</div>
+						<div class="slider-sub-header pull-left">Click each photo to view larger</div>
+					</div>
+					<div class="slider-content">
+						<div class="advance-bar"></div>
+						<div class="advance-arrow left"></div>
+						<?php echo do_shortcode("[nggallery id=$gid w=600 h=450]"); ?>
+						<div class="advance-bar right"></div>
+						<div class="advance-arrow right"></div>
+					</div>
+					<div class="slider-bottom"></div>
+					<?php endif; ?>
+				</div>
 
 			    <?php else : ?>
 
