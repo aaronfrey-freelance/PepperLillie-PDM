@@ -357,6 +357,8 @@ body.home {
 		overflow: hidden;
 	}
 	.blue-top-right {
+		position: relative;
+		z-index: 1;
 		width: 0;
 		height: 0;
 		border-style: solid;
@@ -366,6 +368,29 @@ body.home {
 	}
 	.blue-top-bottom { background: #005072; height: 15px; }
 }
+
+// Start Download Project PDF
+
+.dark-blue-top-left {
+	height: 35px;
+	line-height: 11px;
+	width: 276px;
+	padding: 13px 0 0 45px;
+	overflow: hidden;
+	font-size: 13px;
+	color: #fff;
+	background: url('../img/arrows/arrow_red_right.png') 27px center no-repeat #01364d;
+}
+.dark-blue-top-right {
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 34px 0 0 28px;
+	padding-top: 1px;
+	border-color: transparent transparent transparent #01364d;
+}
+// End Download Project PDF
+
 .center-content {
 	background: #fff;
 	opacity: 1;
@@ -887,6 +912,11 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
 		margin-top: 73px;
 	}
 
+	.dark-blue {
+		position: absolute;
+		right: 0;
+	}
+
 	.center-content {
 		background-color:rgba(255,255,255,0.9);
 		min-height: 350px;
@@ -918,6 +948,12 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
 
 	.blue-top {
 		background: none;
+	}
+
+	.dark-blue {
+		position: relative;
+		overflow: auto;
+		left: -28px;
 	}
 
 	/* Project Dropdown Nav */

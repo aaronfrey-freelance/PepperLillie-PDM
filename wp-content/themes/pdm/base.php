@@ -37,11 +37,37 @@
 
 	    		<div class="blue-top col-md-10 col-md-offset-1">
 	    			<div class="blue-top-top">
+
 	    				<div class="blue-top-left pull-left"><h1><?php echo $title; ?></h1></div>
 	    				<div class="blue-top-right pull-left"></div>
+
+						<!-- If this is the Projects Archive page -->
+						<?php if(is_category(4)) : ?>
+						<div class="dark-blue hidden-xs">
+							<a href="http://google.com">
+	    						<div class="dark-blue-top-left pull-left">DOWNLOAD PROJECT RESUME (PDF)</div>
+	    						<div class="dark-blue-top-right pull-left"></div>
+	    					</a>
+						</div>
+
+						<!-- Else if the post is in the About or Projects categories -->
+						<?php elseif(in_category(3) || in_category(4)) : ?>
+
 	    				<a href="#" class="pull-right dropdown hidden-lg hidden-md">Show Menu</a>
+
+	    				<?php endif; ?>
+
 	    			</div>
 	    			<div class="blue-top-bottom"></div>
+
+					<?php if(is_category(4)) : ?>
+					<div class="dark-blue visible-xs">
+						<a href="http://google.com">
+    						<div class="dark-blue-top-left">DOWNLOAD PROJECT RESUME (PDF)</div>
+    					</a>
+					</div>
+					<?php endif; ?>
+
 	    		</div>
 
 	    		<div class="center-content col-md-10 col-md-offset-1">
