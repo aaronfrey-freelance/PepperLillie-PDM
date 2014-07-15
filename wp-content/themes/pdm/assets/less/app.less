@@ -855,7 +855,7 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
 	}
 	.navbar-nav { margin-top: 0; }
 	.navbar-nav>li>a {
-		line-height: 50px;
+		line-height: 52px;
 		padding-top: 14px;
 		padding-bottom: 14px;
 	}
@@ -919,6 +919,73 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
 	.blue-top {
 		background: none;
 	}
+
+	/* Project Dropdown Nav */
+	.nav {
+		li {
+			&.open {
+				border: 1px solid #dadbdb;
+				border-bottom: none;
+				margin-top: 13px;
+				height: 68px;
+				a {
+					padding-top: 0;
+				}
+			}
+			.dropdown-menu {
+				border-radius: 0;
+				border: 1px solid #dadbdb;
+				border-bottom: none;
+				left: -1px;
+				z-index: -1;
+				margin-top: -1px;
+				padding: 23px 0 0 20px;
+				li {
+					padding-left: 15px;
+					margin-bottom: 15px;
+					background: url('../img/red-cross.png') left 6px no-repeat;
+					&.menu-download-project-resume-pdf {
+						margin-bottom: 0;
+						margin-left: -20px;
+						height: 40px;
+						border-top: 1px solid #dadbdb;
+						background: url('../img/arrows/arrow_red_right.png') 18px center no-repeat #dadbdb;
+						a {
+							line-height: 40px;
+							padding: 0 0 0 20px;
+							&:hover {
+								padding-bottom: 0;
+							}
+						}
+					}
+					a {
+						padding-left: 0;
+						font-size: 13px;
+						font-weight: 700;
+					}
+				}
+			}
+			.dropdown-menu>.active>a {
+				background-color: #fff;
+				color: #000;
+			}
+			.dropdown-menu>li>a:hover {
+				background-color: #fff;
+				color: #000;
+			}
+			li.menu-download-project-resume-pdf>a:hover {
+				height: 30px;
+				background: url('../img/arrows/arrow_red_right.png') 3px 14px no-repeat #dadbdb;
+			}
+		}
+	}
+
+	.menu-projects {
+		top: 1px;
+		background: #fff !important;
+	}
+
+	/* Project Dropdown Nav */
 }
 
 @media (min-width: @screen-lg-min) { }

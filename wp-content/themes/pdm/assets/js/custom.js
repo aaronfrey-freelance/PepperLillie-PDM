@@ -49,7 +49,17 @@ jQuery(function() {
         img.css('width', '100%');
       }
     });
+  });
 
+  // Projects Dropdown Menu
+  jQuery('.dropdown-menu').addClass('hidden-sm hidden-xs');
+
+  jQuery('.dropdown').on('mouseover', function(e) {
+    jQuery(this).addClass('open');
+  });
+
+  jQuery('.dropdown').on('mouseout', function(e) {
+    jQuery(this).removeClass('open');
   });
 
 });
