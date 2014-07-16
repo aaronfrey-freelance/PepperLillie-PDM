@@ -144,6 +144,7 @@ body.category-news {
 	.project-info {
 		position: absolute;
 		right: 35px;
+		bottom: 30px;
 		color: #fff;
 		font-size: 16px;
 		text-align: right;
@@ -211,8 +212,7 @@ body.home {
 
 	.blue-box {
 		// display: none;
-		position: absolute;
-		bottom: 99px;
+		position: relative;
 		overflow: hidden;
 
 		.blue-border-corner {
@@ -744,6 +744,13 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
 /* Tablet */
 @media (min-width: @screen-sm-min) {
 
+	#front-page {
+		.project-info {
+			position: relative;
+			top: 0;
+		}
+	}
+
 	/* Slideshow */
 	.image-slider {
 		background: #eaeae9;
@@ -857,6 +864,8 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
 	body.home {
 
 		.blue-box {
+			position: absolute;
+			bottom: 99px;
 			bottom: 35px;
 			left: 57px;
 			.blue-box-content {
@@ -974,16 +983,7 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
 	/* Front Page Sliders */
 	#front-page {
 		.project-info {
-			position: absolute;
-			right: 35px;
-			#project-title {
-				font-family: 'Roboto Slab', serif;
-				font-weight: 700;
-			}
-			#project-location {
-				font-weight: 500;
-				font-style: italic;
-			}
+
 		}
 		.full-screen-controls {
 			a {
@@ -991,7 +991,7 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
 				height: 107px;
 				display: inline-block;
 				position: absolute;
-				top: 40%;
+				top: 50%;
 				&.previous {
 					left: 0;
 					background: url('../img/arrows/arrow_white_left.png') 13px center no-repeat #333;
