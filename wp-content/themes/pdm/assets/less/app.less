@@ -80,7 +80,16 @@ form {
 
 html { height: 100%; }
 
-body { font-family: 'Roboto', sans-serif; background: grey; height: 100%; }
+body {
+	font-family: 'Roboto', sans-serif;
+	background: grey;
+	height: 100%;
+	transition: 2.5s;
+}
+
+body.transition {
+	opacity: 0;
+}
 
 body.category-projects {
 	background: url('../img/backgrounds/projects_landing.jpg') no-repeat center center fixed;
@@ -128,6 +137,33 @@ body.category-news {
   margin: 0 auto -99px;
   /* Pad bottom by footer height */
   padding: 0 0 99px;
+}
+
+/* Front Page Sliders */
+#front-page {
+	.project-info {
+		position: absolute;
+		right: 35px;
+		color: #fff;
+		font-size: 16px;
+		text-align: right;
+		padding-top: 30px;
+		#project-title {
+			font-family: 'Roboto Slab', serif;
+			font-weight: 700;
+		}
+		#project-location {
+			font-weight: 500;
+			font-style: italic;
+		}
+	}
+}
+
+body.home {
+	#wrap, #front-page {
+		height: 100%;
+		margin-bottom: -18px;
+	}
 }
 
 
@@ -216,7 +252,7 @@ body.home {
 
 	.white-box {
 		position: absolute;
-		bottom: 99px;
+		bottom: 18px;
 		display: none;
 
 		.white-border-corner {
@@ -821,7 +857,7 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
 	body.home {
 
 		.blue-box {
-			bottom: 116px;
+			bottom: 35px;
 			left: 57px;
 			.blue-box-content {
 				width: 608px;
@@ -934,6 +970,39 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
 
 /* Desktop */
 @media (min-width: @screen-md-min) {
+
+	/* Front Page Sliders */
+	#front-page {
+		.project-info {
+			position: absolute;
+			right: 35px;
+			#project-title {
+				font-family: 'Roboto Slab', serif;
+				font-weight: 700;
+			}
+			#project-location {
+				font-weight: 500;
+				font-style: italic;
+			}
+		}
+		.full-screen-controls {
+			a {
+				width: 47px;
+				height: 107px;
+				display: inline-block;
+				position: absolute;
+				top: 40%;
+				&.previous {
+					left: 0;
+					background: url('../img/arrows/arrow_white_left.png') 13px center no-repeat #333;
+				}
+				&.next {
+					right: 0;
+					background: url('../img/arrows/arrow_white_right.png') 20px center no-repeat #333;
+				}
+			}
+		}
+	}
 
 	/* Header */
 	.banner .navbar-nav { float: right; }

@@ -22,11 +22,11 @@
 	    }
 	    ?>
 
+	   	<?php if(!is_page('home')) : ?>
+
 	    <div class="wrap container" role="document">
 
 	    	<div class="content row">
-
-	    		<?php if(!is_page('home')) : ?>
 
 	    		<?php
 	    		$category = get_the_category();
@@ -108,21 +108,48 @@
 					<?php endif; ?>
 				</div>
 
-			    <?php else : ?>
-
-			    <div class="col-md-12">
-
-			    	<main class="main <?php echo roots_main_class(); ?>" role="main">
-			    		<?php include roots_template_path(); ?>
-			    	</main><!-- /.main -->
-
-			    </div>
-
-				<?php endif; ?>
-
 			</div><!-- /.content -->
 
 		</div><!-- /.wrap -->
+
+	    <?php else : ?>
+
+		<!-- This is the main page -->
+
+		<?php
+			$args = array(
+				'posts_per_page'   => 100,
+				'category'         => '4',
+				'meta_key'         => 'upload_image',
+				'orderby'          => 'post_date',
+				'order'            => 'DESC',
+				'post_type'        => 'post',
+				'post_status'      => 'publish');
+			$posts_array = get_posts( $args );
+		?>
+
+	    <div id="front-page">
+	    	<?php if($posts_array) : ?>
+	    		<div class="project-info">
+	    			<p id="project-title"></p>
+	    			<p id="project-location"></p>
+	    		</div>
+	    		<div class="full-screen-controls hidden-sm hidden-xs">
+	    			<a href="#" class="previous"></a>
+	    			<a href="#" class="next"></a>
+	    		</div>
+	    		<?php foreach($posts_array as $post) : ?>
+	    		<div
+	    			class="full-screen"
+	    			data-background="<?php echo $post->upload_image; ?>"
+	    			data-title="<?php echo $post->post_title; ?>"
+	    			data-location="<?php echo get_field('project_location', $post->ID); ?>">
+	    		</div>
+				<?php endforeach; ?>
+			<?php endif; ?>
+	    </div>
+
+		<?php endif; ?>
 
 	</div>
 

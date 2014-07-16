@@ -62,4 +62,69 @@ jQuery(function() {
     jQuery(this).removeClass('open');
   });
 
+  // Front Page Full Size Slider
+
+  var total = 0;
+  var current = 0;
+
+  function processBg(full_screen, fade) {
+    // Get all the parameters
+    var background = jQuery(full_screen).data('background');
+    var title = jQuery(full_screen).data('title');
+    var location = jQuery(full_screen).data('location');
+    var page = jQuery('#front-page');
+
+    if(!fade) {
+      jQuery('#project-title').text(title);
+      jQuery('#project-location').text(location);
+      page.css('background-size', 'cover');
+      page.css('background-image', 'url(' + background + ')');
+    } else {
+      page.fadeOut("slow", function() {
+        jQuery('#project-title').text(title);
+        jQuery('#project-location').text(location);
+        page.css('background-size', 'cover');
+        page.css('background-image', 'url(' + background + ')');
+      }).fadeIn();
+    }
+  }
+
+  function getPrevious() {
+    if(current === 0) {
+      current = total - 1;
+    } else {
+      current = current - 1;
+    }
+  }
+
+  function getNext() {
+    if(current === total - 1) {
+      current = 0;
+    } else {
+      current = current + 1;
+    }
+  }
+
+  if(jQuery('#front-page').length) {
+
+    var bg_array = jQuery('.full-screen');
+    total = bg_array.length;
+
+    processBg(bg_array[current], false);
+
+    jQuery('.full-screen-controls a').on('click', function(e) {
+      e.preventDefault();
+
+      var btn = jQuery(this);
+      if(total > 0) {
+        if(btn.hasClass('previous')) {
+          getPrevious();
+        } else if(btn.hasClass('next')) {
+          getNext();
+        }
+        processBg(bg_array[current], true);
+      }
+    });
+  }
+
 });
