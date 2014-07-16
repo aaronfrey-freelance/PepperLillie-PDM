@@ -38,10 +38,13 @@ function editglobalcustomfields() {
     <p><strong>YouTube URL:</strong><br />
     <input type="text" name="youtubeurl" size="100" value="<?php echo get_option('youtubeurl'); ?>" /></p>
 
+    <p><strong>Project Resume PDF Link:</strong><br />
+    <input type="text" name="resumelink" size="100" value="<?php echo get_option('resumelink'); ?>" /></p>
+
     <p><input type="submit" name="Submit" value="Update Options" /></p>
 
     <input type="hidden" name="action" value="update" />
-    <input type="hidden" name="page_options" value="address1,address2,address3,phonenumber,faxnumber,linkedinurl,facebookurl,youtubeurl" />
+    <input type="hidden" name="page_options" value="address1,address2,address3,phonenumber,faxnumber,linkedinurl,facebookurl,youtubeurl,resumelink" />
 
     </form>
     </div>

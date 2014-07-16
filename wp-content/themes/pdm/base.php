@@ -44,7 +44,7 @@
 						<!-- If this is the Projects Archive page -->
 						<?php if(is_category(4)) : ?>
 						<div class="dark-blue hidden-xs">
-							<a href="http://google.com">
+							<a href="<?php echo get_option('resumelink'); ?>" target="_blank">
 	    						<div class="dark-blue-top-left pull-left">DOWNLOAD PROJECT RESUME (PDF)</div>
 	    						<div class="dark-blue-top-right pull-left"></div>
 	    					</a>
@@ -62,7 +62,7 @@
 
 					<?php if(is_category(4)) : ?>
 					<div class="dark-blue visible-xs">
-						<a href="http://google.com">
+						<a href="<?php echo get_option('resumelink'); ?>" target="_blank">
     						<div class="dark-blue-top-left">DOWNLOAD PROJECT RESUME (PDF)</div>
     					</a>
 					</div>
