@@ -1,5 +1,7 @@
 <div class="services-index">
 
+	<h1>PDM maintains a variety of products and services:</h1>
+
 	<?php while (have_posts()) : the_post(); ?>
 	  <div <?php post_class('row'); ?>>
 	  	<div class="col-sm-8">
