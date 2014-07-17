@@ -107,7 +107,7 @@ body.category-services {
 	background-size: cover;
 }
 
-body.category-careers {
+body.careers, body.single-job_listing {
 	background: url('../img/backgrounds/careers_landing.jpg') no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -520,36 +520,6 @@ body.home {
 	p { font-size: 16px; line-height: 20px; }
 }
 
-.careers-index {
-	font-size: 16px;
-	line-height: 20px;
-	.title-header { padding-bottom: 23px; }
-	table {
-		border-bottom: 1px solid #a3a6a8;
-		border-color: #a3a6a8;
-	}
-	th {
-		font-weight: 700;
-		color: #005072;
-	}
-	td {
-		height: 59px;
-		padding: 17px 5px !important;
-		border-color: #a3a6a8 !important;
-	}
-	.job-title {
-		color: #005072;
-		text-decoration: underline;
-	}
-	.recent{
-		background: #a3a6a8;
-		padding: 1px 4px;
-		text-transform: uppercase;
-		margin-right: 10px;
-		color: #fff;
-	}
-}
-
 .careers-sidebar {
 	margin-top: 75px;
 	font-size: 16px;
@@ -595,6 +565,23 @@ body.home {
 			margin-bottom: 20px;
 			display: inline-block;
 			background: url('../img/arrows/arrow_red_right.png') left center no-repeat;
+		}
+	}
+}
+
+
+/* Jobs Listings */
+div.job_listings {
+	div {
+		line-height: 20px;
+	}
+	ul {
+		li {
+			text-indent: 0;
+			padding: 0;
+		}
+		li:before {
+		    content: "";
 		}
 	}
 }

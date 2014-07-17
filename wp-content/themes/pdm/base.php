@@ -33,6 +33,7 @@
 	    		$cat_name = $category[0]->cat_name;
 	    		$title = $cat_name ? $cat_name : get_the_title();
 	    		$title = $title ? $title : single_cat_title('', false);
+				$title = !notOnJobs() ? 'Careers' : $title;
 	    		?>
 
 	    		<div class="blue-top col-md-10 col-md-offset-1">
