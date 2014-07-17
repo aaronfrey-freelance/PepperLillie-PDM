@@ -98,7 +98,7 @@
 						<div class="slider-sub-header pull-left">Click each photo to view larger</div>
 					</div>
 					<div class="slider-content">
-						<div class="advance-bar"></div>
+						<div class="advance-bar left"></div>
 						<div class="advance-arrow left"></div>
 						<?php echo do_shortcode("[nggallery id=$gid w=600 h=450]"); ?>
 						<div class="advance-bar right"></div>

@@ -136,4 +136,54 @@ jQuery(function() {
     });
   }
 
+  /* Project Slider */
+
+  // If there are images present
+  if(jQuery('#ngg-image-0').length) {
+
+    jQuery('.advance-bar, .advance-arrow').on('click', function(e) {
+      var btn = jQuery(this);
+      var sliderViewable = jQuery('.slider-content');
+      var sliderContent = jQuery('.ngg-galleryoverview');
+      var imageWidth = jQuery('#ngg-image-0').outerWidth(true);
+
+      // Get the width of the viewable slider window
+      var viewWidth = sliderViewable.width();
+
+      // Calculate how many full images are present
+      var fullImages = Math.floor(viewWidth / imageWidth);
+
+      // Get the width of the total slideshow
+      var totalWidth = jQuery('.ngg-gallery-thumbnail-box').length * imageWidth;
+
+      // Get the current left position of the slider
+      var currentLeft = jQuery('.ngg-galleryoverview').position().left;
+
+      var remining = 0;
+      var slide = 0;
+      var desiredSlide = 0;
+
+      if(btn.hasClass('left')) {
+        remaining = Math.abs(currentLeft);
+        desiredSlide = fullImages * imageWidth;
+        slide = remaining < desiredSlide ? remaining : desiredSlide;
+        sliderContent.animate({
+          left: "-=-"+slide
+        }, 1000, function() {
+          // Animation complete.
+        });
+      } else if(btn.hasClass('right')) {
+        // Calculate the remaining width left to slide
+        remaining = totalWidth + currentLeft - viewWidth;
+        desiredSlide = fullImages * imageWidth;
+        slide = remaining < desiredSlide ? remaining : desiredSlide;
+        sliderContent.animate({
+          left: "+=-"+slide
+        }, 1000, function() {
+          // Animation complete.
+        });
+      }
+
+    });
+  }
 });
