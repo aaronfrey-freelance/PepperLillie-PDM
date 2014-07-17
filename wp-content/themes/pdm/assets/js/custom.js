@@ -32,6 +32,15 @@ jQuery(function() {
     jQuery('#'+pane).show().siblings('div').hide();
   });
 
+  jQuery(document).click(function(e) {
+      var isTeaserLinks = !jQuery(e.target).parents('ul#teaser-links').length;
+      var isWhiteBox = !jQuery(e.target).parents('div#white-box').length;
+      if(isTeaserLinks && isWhiteBox) {
+        jQuery('#white-box').hide();
+        jQuery('#blue-box').show();
+      }
+  });
+
   // Resize project Images
   jQuery(window).resize(function() {
     // Get project images
