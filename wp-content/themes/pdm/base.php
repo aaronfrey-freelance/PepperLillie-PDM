@@ -34,12 +34,13 @@
 	    		$title = $cat_name ? $cat_name : get_the_title();
 	    		$title = $title ? $title : single_cat_title('', false);
 				$title = notOnJobs() ? 'Careers' : $title;
+				$short_blue = in_category(3) || in_category(4);
 	    		?>
 
 	    		<div class="blue-top col-md-10 col-md-offset-1">
 	    			<div class="blue-top-top">
 
-	    				<div class="blue-top-left pull-left"><h1><?php echo $title; ?></h1></div>
+	    				<div class="blue-top-left pull-left <?php echo $short_blue ? 'short' : ''; ?>"><h1><?php echo $title; ?></h1></div>
 	    				<div class="blue-top-right pull-left"></div>
 
 						<!-- If this is the Projects Archive page -->
@@ -51,8 +52,10 @@
 	    					</a>
 						</div>
 
+						<a href="#" class="pull-right dropdown hidden-lg hidden-md">Show Menu</a>
+
 						<!-- Else if the post is in the About or Projects categories -->
-						<?php elseif(in_category(3) || in_category(4)) : ?>
+						<?php elseif(in_category(3)) : ?>
 
 	    				<a href="#" class="pull-right dropdown hidden-lg hidden-md">Show Menu</a>
 
