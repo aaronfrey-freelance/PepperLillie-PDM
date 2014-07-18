@@ -165,23 +165,40 @@ jQuery(function() {
 
       if(btn.hasClass('left')) {
         remaining = Math.abs(currentLeft);
-        desiredSlide = fullImages * imageWidth;
-        slide = remaining < desiredSlide ? remaining : desiredSlide;
-        sliderContent.animate({
-          left: "-=-"+slide
-        }, 1000, function() {
-          // Animation complete.
-        });
+        var reset = totalWidth - viewWidth;
+        if(remaining === 0) {
+          sliderContent.animate({
+            left: "-"+reset
+          }, "fast", function() {
+            // Animation complete.
+          });
+        } else {
+          desiredSlide = fullImages * imageWidth;
+          slide = remaining < desiredSlide ? remaining : desiredSlide;
+          sliderContent.animate({
+            left: "-=-"+slide
+          }, 1000, function() {
+            // Animation complete.
+          });
+        }
       } else if(btn.hasClass('right')) {
         // Calculate the remaining width left to slide
         remaining = totalWidth + currentLeft - viewWidth;
-        desiredSlide = fullImages * imageWidth;
-        slide = remaining < desiredSlide ? remaining : desiredSlide;
-        sliderContent.animate({
-          left: "+=-"+slide
-        }, 1000, function() {
-          // Animation complete.
-        });
+        if(remaining === 0) {
+          sliderContent.animate({
+            left: "0"
+          }, "fast", function() {
+            // Animation complete.
+          });
+        } else {
+          desiredSlide = fullImages * imageWidth;
+          slide = remaining < desiredSlide ? remaining : desiredSlide;
+          sliderContent.animate({
+            left: "+=-"+slide
+          }, 1000, function() {
+            // Animation complete.
+          });
+        }
       }
 
     });
