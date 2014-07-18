@@ -104,7 +104,10 @@
 
 					$the_query = new WP_Query( $args );
 
-					while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+					while ( $the_query->have_posts() ) : $the_query->the_post();
+						$article_url = get_field('article_url');
+						$url = $article_url ? $article_url : get_the_permalink();
+					?>
 						<div>
 							<div class="pull-left teaser-title">
 								<h1>Recent News</h1>
@@ -113,6 +116,7 @@
 							<div class="pull-left teaser-image">
 								<h2><?php the_title(); ?></h2>
 								<p><?php the_excerpt(); ?></p>
+								<a href="<?php echo $url; ?>" class="read-more">Read More</a>
 							</div>
 						</div>
 					<?php endwhile;
