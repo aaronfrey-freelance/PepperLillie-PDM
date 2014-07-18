@@ -121,19 +121,16 @@
 		<!-- This is the main page -->
 
 		<?php
-			$args = array(
-				'posts_per_page'   => 100,
-				'category'         => '4',
-				'meta_key'         => 'upload_image',
-				'orderby'          => 'post_date',
-				'order'            => 'DESC',
-				'post_type'        => 'post',
-				'post_status'      => 'publish');
-			$posts_array = get_posts( $args );
+			global $wpdb;
+			$results = $wpdb->get_results( "SELECT * FROM wp_ngg_gallery WHERE slug = 'homepage'", OBJECT );
+			if(count($results)) {
+				global $nggdb;
+				$gallery = $nggdb->get_gallery($results[0]->gid, 'sortorder', 'ASC', true, 0, 0);
+			}
 		?>
 
-	    <div id="front-page">
-	    	<?php if($posts_array) : ?>
+		<div id="front-page">
+	    	<?php if($gallery) : ?>
 	    		<div class="project-info">
 	    			<p id="project-title"></p>
 	    			<p id="project-location"></p>
@@ -142,12 +139,12 @@
 	    			<a href="#" class="previous"></a>
 	    			<a href="#" class="next"></a>
 	    		</div>
-	    		<?php foreach($posts_array as $post) : ?>
+	    		<?php foreach($gallery as $p) : ?>
 	    		<div
 	    			class="full-screen"
-	    			data-background="<?php echo $post->upload_image; ?>"
-	    			data-title="<?php echo $post->post_title; ?>"
-	    			data-location="<?php echo get_field('project_location', $post->ID); ?>">
+	    			data-background="<?php echo $p->imageURL; ?>"
+	    			data-title="<?php echo $p->alttext; ?>"
+	    			data-location="<?php echo $p->description; ?>">
 	    		</div>
 				<?php endforeach; ?>
 			<?php endif; ?>
