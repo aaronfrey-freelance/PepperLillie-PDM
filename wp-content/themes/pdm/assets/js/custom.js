@@ -1,9 +1,12 @@
 jQuery(function() {
 
+  var myTimer;
+  var interval = 5000;
+
   jQuery(window).load(function() {
     jQuery('#front-page .full-screen-container').fadeIn(1500);
     // run every 5s
-    setInterval(cycleImages, 5000);
+    myTimer = setInterval(cycleImages, interval);
   });
 
   function resizeSidebar() {
@@ -112,11 +115,13 @@ jQuery(function() {
 
       var btn = jQuery(this);
       if(total > 0) {
+        clearInterval(myTimer);
         if(btn.hasClass('previous')) {
           cycleImages(true);
         } else if(btn.hasClass('next')) {
           cycleImages();
         }
+        myTimer = setInterval(cycleImages, interval);
       }
     });
   }
