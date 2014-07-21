@@ -2,12 +2,6 @@
 
 <body <?php body_class(); ?>>
 
-  	<!--[if lt IE 8]>
-    <div class="alert alert-warning">
-      <?php _e('You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.', 'roots'); ?>
-    </div>
-    <![endif]-->
-
 	<div id="wrap">
 
 	    <?php
@@ -38,6 +32,7 @@
 	    		?>
 
 	    		<div class="blue-top col-md-10 col-md-offset-1">
+
 	    			<div class="blue-top-top">
 
 	    				<div class="blue-top-left pull-left <?php echo $short_blue ? 'short' : ''; ?>"><h1><?php echo $title; ?></h1></div>
@@ -52,17 +47,20 @@
 	    					</a>
 						</div>
 
-						<a href="#" class="pull-right dropdown hidden-lg hidden-md">Show Menu</a>
-
 						<!-- Else if the post is in the About or Projects categories -->
-						<?php elseif(in_category(3)) : ?>
+						<?php elseif(in_category(3) || in_category(4)) : ?>
 
-	    				<a href="#" class="pull-right dropdown hidden-lg hidden-md">Show Menu</a>
+	    				<a href="#" class="pull-right show-more hidden-lg hidden-md">Show Menu</a>
 
 	    				<?php endif; ?>
 
 	    			</div>
+
 	    			<div class="blue-top-bottom"></div>
+
+	    			<div class="menu-dropdown hidden-lg hidden-md">
+	    				<?php get_template_part('templates/sidebar', 'category'); ?>
+	    			</div>
 
 					<?php if(is_category(4)) : ?>
 					<div class="dark-blue visible-xs">
@@ -88,7 +86,7 @@
 	    			<?php if (roots_display_sidebar()) : ?>
 	    			<aside class=" hidden-sm hidden-xs sidebar <?php echo roots_sidebar_class(); ?> <?php echo strtolower($cat_name); ?>" role="complementary">
 	    				<?php include roots_sidebar_path(); ?>
-	    			</aside><!-- /.sidebar -->
+	    			</aside>
 	    			<?php endif; ?>
 
 		    	</div>

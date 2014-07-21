@@ -20,27 +20,25 @@
 		$first_key = key($gallery);
 	?>
 
-		<div class="full-screen-controls hidden-sm hidden-xs">
-			<a href="#" class="previous"></a>
-			<a href="#" class="next"></a>
-		</div>
+	<div class="full-screen-controls hidden-sm hidden-xs">
+		<a href="#" class="previous"></a>
+		<a href="#" class="next"></a>
+	</div>
 
-		<div class="full-screen-container">
+	<div class="full-screen-container">
 
-			<?php foreach($gallery as $index => $p) : ?>
-			<div
-				class="full-screen <?php echo $index === $first_key ? 'active' : '' ?>"
-				data-background="<?php echo $p->imageURL; ?>">
-				<div class="project-info">
-					<p class="project-title"><?php echo $p->alttext; ?></p>
-					<p class="project-location"><?php echo $p->description; ?></p>
-				</div>
+		<?php foreach($gallery as $index => $p) : ?>
+		<div
+			class="full-screen <?php echo $index === $first_key ? 'active' : '' ?>"
+			data-background="<?php echo $p->imageURL; ?>">
+			<div class="project-info">
+				<p class="project-title"><?php echo $p->alttext; ?></p>
+				<p class="project-location"><?php echo $p->description; ?></p>
 			</div>
-			<?php endforeach; ?>
-
 		</div>
+		<?php endforeach; ?>
 
+	</div>
 
-		</div>
 	<?php endif; ?>
 </div>

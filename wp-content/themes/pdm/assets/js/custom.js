@@ -81,7 +81,6 @@ jQuery(function() {
   });
 
   // Front Page Full Size Slider
-
   function cycleImages(reverse) {
     var $active = jQuery('#front-page .full-screen-container .active');
     var $next;
@@ -190,7 +189,20 @@ jQuery(function() {
           });
         }
       }
-
     });
   }
+
+  // Show More Links
+  jQuery('.show-more').on('click', function(e) {
+    e.preventDefault();
+    var link = jQuery(this);
+    link.toggleClass('open');
+    if(link.hasClass('open')) {
+      link.text('Hide Menu');
+    } else {
+      link.text('Show Menu');
+    }
+    jQuery('.menu-dropdown').slideToggle();
+  });
+
 });
