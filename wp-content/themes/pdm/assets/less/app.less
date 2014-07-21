@@ -133,14 +133,27 @@ body.category-news {
 }
 
 .home #wrap {
-  /* Negative indent footer by its height */
-  margin: 0 auto -99px;
-  /* Pad bottom by footer height */
-  padding: 0 0 99px;
+	margin: 0 auto -99px;
+	padding: 0 0 180px;
 }
 
 /* Front Page Sliders */
 #front-page {
+
+	position: relative;
+
+	.full-screen {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 1;
+		&.active {
+			z-index: 3;
+		}
+	}
+
 	.project-info {
 		position: absolute;
 		right: 35px;
@@ -149,12 +162,12 @@ body.category-news {
 		font-size: 16px;
 		text-align: right;
 		padding-top: 30px;
-		#project-title {
+		.project-title {
 			font-size: 18px;
 			font-family: 'Roboto Slab', serif;
 			font-weight: 700;
 		}
-		#project-location {
+		.project-location {
 			font-weight: 500;
 			font-style: italic;
 		}
@@ -164,7 +177,6 @@ body.category-news {
 body.home {
 	#wrap, #front-page {
 		height: 100%;
-		margin-bottom: -18px;
 	}
 }
 
@@ -212,7 +224,7 @@ body.home {
 	background: #fff;
 
 	.blue-box {
-		// display: none;
+		z-index: 4;
 		position: relative;
 		overflow: hidden;
 
@@ -255,6 +267,7 @@ body.home {
 		position: absolute;
 		bottom: 18px;
 		display: none;
+		z-index: 4;
 
 		.white-border-corner {
 			height: 11px;
@@ -875,8 +888,7 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
 
 		.blue-box {
 			position: absolute;
-			bottom: 99px;
-			bottom: 35px;
+			bottom: 116px;
 			left: 57px;
 			.blue-box-content {
 				width: 608px;
@@ -893,6 +905,7 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
 
 		.white-box {
 			left: 56px;
+			bottom: 99px;
 			.white-box-content {
 				width: 608px;
 				height: 263px;
@@ -992,16 +1005,18 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
 
 	/* Front Page Sliders */
 	#front-page {
-		.project-info {
 
-		}
+		margin: 0 auto -99px;
+		padding: 0 0 99px;
+
 		.full-screen-controls {
 			a {
 				width: 47px;
 				height: 107px;
 				display: inline-block;
 				position: absolute;
-				top: 50%;
+				top: 40%;
+				z-index: 4;
 				&.previous {
 					left: 0;
 					background: url('../img/arrows/arrow_white_left.png') 13px center no-repeat #333;

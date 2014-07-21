@@ -118,37 +118,7 @@
 
 	    <?php else : ?>
 
-		<!-- This is the main page -->
-
-		<?php
-			global $wpdb;
-			$results = $wpdb->get_results( "SELECT * FROM wp_ngg_gallery WHERE slug = 'homepage'", OBJECT );
-			if(count($results)) {
-				global $nggdb;
-				$gallery = $nggdb->get_gallery($results[0]->gid, 'sortorder', 'ASC', true, 0, 0);
-			}
-		?>
-
-		<div id="front-page">
-	    	<?php if($gallery) : ?>
-	    		<div class="project-info">
-	    			<p id="project-title"></p>
-	    			<p id="project-location"></p>
-	    		</div>
-	    		<div class="full-screen-controls hidden-sm hidden-xs">
-	    			<a href="#" class="previous"></a>
-	    			<a href="#" class="next"></a>
-	    		</div>
-	    		<?php foreach($gallery as $p) : ?>
-	    		<div
-	    			class="full-screen"
-	    			data-background="<?php echo $p->imageURL; ?>"
-	    			data-title="<?php echo $p->alttext; ?>"
-	    			data-location="<?php echo $p->description; ?>">
-	    		</div>
-				<?php endforeach; ?>
-			<?php endif; ?>
-	    </div>
+		<?php get_template_part('templates/home'); ?>
 
 		<?php endif; ?>
 

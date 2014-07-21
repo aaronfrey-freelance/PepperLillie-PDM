@@ -1,5 +1,11 @@
 jQuery(function() {
 
+  jQuery(window).load(function() {
+    jQuery('#front-page .full-screen-container').fadeIn(1500);
+    // run every 5s
+    setInterval(cycleImages, 5000);
+  });
+
   function resizeSidebar() {
     var center_content_height = jQuery('.center-content .main').outerHeight();
 
@@ -73,45 +79,21 @@ jQuery(function() {
 
   // Front Page Full Size Slider
 
-  var total = 0;
-  var current = 0;
+  function cycleImages(reverse) {
+    var $active = jQuery('#front-page .full-screen-container .active');
+    var $next;
 
-  function processBg(full_screen, fade) {
-    // Get all the parameters
-    var background = jQuery(full_screen).data('background');
-    var title = jQuery(full_screen).data('title');
-    var location = jQuery(full_screen).data('location');
-    var page = jQuery('#front-page');
-
-    if(!fade) {
-      jQuery('#project-title').text(title);
-      jQuery('#project-location').text(location);
-      page.css('background-size', 'cover');
-      page.css('background-image', 'url(' + background + ')');
+    if(reverse) {
+      $next = (jQuery('#front-page .full-screen-container .active').prev().length > 0) ? jQuery('#front-page .full-screen-container .active').prev() : jQuery('#front-page .full-screen:last');
     } else {
-      page.fadeOut("slow", function() {
-        jQuery('#project-title').text(title);
-        jQuery('#project-location').text(location);
-        page.css('background-size', 'cover');
-        page.css('background-image', 'url(' + background + ')');
-      }).fadeIn();
+      $next = (jQuery('#front-page .full-screen-container .active').next().length > 0) ? jQuery('#front-page .full-screen-container .active').next() : jQuery('#front-page .full-screen:first');
     }
-  }
 
-  function getPrevious() {
-    if(current === 0) {
-      current = total - 1;
-    } else {
-      current = current - 1;
-    }
-  }
-
-  function getNext() {
-    if(current === total - 1) {
-      current = 0;
-    } else {
-      current = current + 1;
-    }
+    $next.css('z-index',2); //move the next image up the pile
+    $active.fadeOut(1500,function() { //fade out the top image
+      $active.css('z-index',1).show().removeClass('active'); //reset the z-index and unhide the image
+      $next.css('z-index',3).addClass('active');//make the next image the top one
+    });
   }
 
   if(jQuery('#front-page').length) {
@@ -119,7 +101,11 @@ jQuery(function() {
     var bg_array = jQuery('.full-screen');
     total = bg_array.length;
 
-    processBg(bg_array[current], false);
+    jQuery.each(bg_array, function() {
+      var background = jQuery(this).data('background');
+      jQuery(this).css('background-size', 'cover');
+      jQuery(this).css('background-image', 'url(' + background + ')');
+    });
 
     jQuery('.full-screen-controls a').on('click', function(e) {
       e.preventDefault();
@@ -127,11 +113,10 @@ jQuery(function() {
       var btn = jQuery(this);
       if(total > 0) {
         if(btn.hasClass('previous')) {
-          getPrevious();
+          cycleImages(true);
         } else if(btn.hasClass('next')) {
-          getNext();
+          cycleImages();
         }
-        processBg(bg_array[current], true);
       }
     });
   }
