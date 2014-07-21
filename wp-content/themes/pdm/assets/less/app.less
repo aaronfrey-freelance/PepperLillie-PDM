@@ -364,6 +364,8 @@ body.home {
 		width: 100%;
 		background: #b32017;
 		margin: 0;
+		position: relative;
+		z-index: 3;
 		.container {
 			padding: 0 35px;
 			ul {
@@ -713,8 +715,11 @@ aside.about, aside.projects {
 	color: #fff;
 	font-size: 13px;
 	min-height: 52px;
+	position: relative;
+	z-index: 3;
 	.container {
-		padding: 0 35px;
+		width: 100%;
+		padding: 0 15px;
 	}
 	a { display: inline-block; text-decoration: none; }
 	.address-footer {
@@ -959,6 +964,7 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
 	}
 	.navbar-form {
 		padding: 0;
+		margin-right: 15px;
 		input[type="search"] {
 			background: #a2abb2;
 			color: #fff;
@@ -992,9 +998,6 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
 
 	/* Footer */
 	.content-info {
-		.container {
-			padding: inherit;
-		}
 		.address-footer { width: 100%; }
 		.social-footer { float: right; padding-bottom: 0; }
 	}
