@@ -1,6 +1,10 @@
 <div class="services-index">
 
-	<h1>PDM maintains a variety of products and services:</h1>
+	<div class="row">
+		<div class="col-sm-8">
+			<h2 class="services-header">PDM maintains a variety of products and services:</h2>
+		</div>
+	</div>
 
 	<?php while (have_posts()) : the_post(); ?>
 	  <div <?php post_class('row'); ?>>
