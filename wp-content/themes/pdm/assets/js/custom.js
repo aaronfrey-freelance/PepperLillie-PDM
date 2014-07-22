@@ -205,4 +205,13 @@ jQuery(function() {
     jQuery('.menu-dropdown').slideToggle();
   });
 
+  if(!jQuery('#ngg-image-0').length) {
+    jQuery('.open-gallery').hide();
+  }
+
+  // Open the Project gallery on mobile
+  jQuery('.open-gallery').on('click', function(e) {
+    e.preventDefault();
+    jQuery('#ngg-image-0').find('a.ngg-fancybox').click();
+  });
 });

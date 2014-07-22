@@ -58,13 +58,23 @@ form {
 		-moz-border-radius: 5px;
 		border-radius: 5px;
 	}
-	.wpcf7-submit {
-		width: auto;
+}
+
+.wpcf7-submit, .open-gallery {
+	width: auto;
+	background: #1f518b;
+	color: #fff;
+	text-transform: uppercase;
+	padding: 3px 36px;
+	border: none;
+}
+
+.open-gallery {
+	margin-bottom: 20px;
+	width: 100%;
+	font-weight: 700;
+	&:hover {
 		background: #1f518b;
-		color: #fff;
-		text-transform: uppercase;
-		padding: 3px 36px;
-		border: none;
 	}
 }
 
@@ -605,7 +615,6 @@ body.home {
 	}
 }
 
-
 /* Jobs Listings */
 div.job_listings, .single_job_listing {
 	div {
@@ -659,8 +668,6 @@ ul.job_listings li.no_job_listings_found a div.position {
 
 /* Gallery Shortcode */
 .gallery-row { padding: 15px 0; }
-
-
 
 /* ==========================================================================
    Sidebar

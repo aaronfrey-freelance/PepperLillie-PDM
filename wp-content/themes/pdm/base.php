@@ -75,7 +75,15 @@
 	    		<div class="center-content col-md-10 col-md-offset-1">
 
 	    			<main class="main <?php echo roots_main_class(); ?>" role="main">
+
 	    				<?php include roots_template_path(); ?>
+
+						<?php if(!is_category(4) && in_category(4)) : ?>
+						<div class="visible-xs text-center">
+	    					<button class="btn btn-primary open-gallery">View Project Gallery</button>
+						</div>
+						<?php endif; ?>
+
 	    			</main><!-- /.main -->
 
 	    			<?php
