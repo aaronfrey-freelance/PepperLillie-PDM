@@ -133,6 +133,24 @@ body.careers, body.single-job_listing {
 	background-size: cover;
 }
 
+body.careers {
+	.main {
+		padding: 0;
+		ul.job_listings
+		{
+			li.job_listing {
+				a {
+					padding-right: 0;
+					.position, .location, .meta
+					{
+						width: 50%;
+					}
+				}
+			}
+		}
+	}
+}
+
 body.category-news {
 	background: url('../img/backgrounds/news_landing.jpg') no-repeat center center fixed;
 	-webkit-background-size: cover;
@@ -623,7 +641,6 @@ body.home {
 	}
 }
 
-/* Jobs Listings */
 div.job_listings, .single_job_listing {
 	div {
 		line-height: 20px;
@@ -1032,6 +1049,28 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
 		.address-footer { width: 100%; }
 		.social-footer { float: right; padding-bottom: 0; }
 	}
+
+	/* Jobs Listings */
+	body.careers {
+		.main {
+			padding: inherit;
+			ul.job_listings
+			{
+				li.job_listing {
+					a {
+						padding-right: inherit;
+						.position, .location, .meta
+						{
+							float: left;
+							width: 32%;
+						}
+					}
+				}
+			}
+		}
+	}
+
+
 }
 
 /* Desktop */
