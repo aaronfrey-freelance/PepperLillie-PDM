@@ -23,12 +23,17 @@
 	    	<div class="content row">
 
 	    		<?php
-	    		$category = get_the_category();
-	    		$cat_name = $category[0]->cat_name;
-	    		$title = $cat_name ? $cat_name : get_the_title();
-	    		$title = $title ? $title : single_cat_title('', false);
-				$title = notOnJobs() ? 'Careers' : $title;
-				$short_blue = in_category(3) || in_category(4);
+
+	    		if(is_search()) {
+	    			$title = 'Results';
+	    		} else {
+		    		$category = get_the_category();
+		    		$cat_name = $category[0]->cat_name;
+		    		$title = $cat_name ? $cat_name : get_the_title();
+		    		$title = $title ? $title : single_cat_title('', false);
+					$title = notOnJobs() ? 'Careers' : $title;
+					$short_blue = in_category(3) || in_category(4);
+				}
 	    		?>
 
 	    		<div class="blue-top col-md-10 col-md-offset-1">
@@ -39,7 +44,7 @@
 	    				<div class="blue-top-right pull-left"></div>
 
 						<!-- If this is the Projects Archive page -->
-						<?php if(is_category(4)) : ?>
+						<?php if(is_category(4) && !is_search()) : ?>
 						<div class="dark-blue hidden-xs">
 							<a href="<?php echo get_option('resumelink'); ?>" target="_blank">
 	    						<div class="dark-blue-top-left pull-left">DOWNLOAD PROJECT RESUME (PDF)</div>
@@ -48,7 +53,7 @@
 						</div>
 
 						<!-- Else if the post is in the About or Projects categories -->
-						<?php elseif(in_category(3) || in_category(4)) : ?>
+						<?php elseif(in_category(3) || in_category(4) && !is_search()) : ?>
 
 	    				<a href="#" class="pull-right show-more hidden-lg hidden-md">Show Menu</a>
 
