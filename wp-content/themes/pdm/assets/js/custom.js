@@ -212,6 +212,6 @@ jQuery(function() {
   // Open the Project gallery on mobile
   jQuery('.open-gallery').on('click', function(e) {
     e.preventDefault();
-    jQuery('#ngg-image-0').find('a.ngg-fancybox').click();
+    jQuery('#ngg-image-0').find('a').click();
   });
 });
