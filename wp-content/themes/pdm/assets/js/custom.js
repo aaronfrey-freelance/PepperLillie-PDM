@@ -1,5 +1,12 @@
 jQuery(function() {
 
+  // Mobile Search Dropdown
+  jQuery('.mobile-search').on('click', function(e) {
+    e.preventDefault();
+    jQuery('.mobile-search-text').slideToggle();
+  });
+
+
   var myTimer;
   var interval = 5000;
 
