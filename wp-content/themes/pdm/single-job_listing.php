@@ -7,3 +7,7 @@
 </p>
 
 <br><br>
+
+<a href="<?php echo get_permalink(270); ?>" class="back-link">Back to Main Careers Page</a>
+
+<br><br>
