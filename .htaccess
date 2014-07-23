@@ -4,6 +4,7 @@
 RewriteEngine On
 RewriteBase /pepperlillie/pdm/
 RewriteRule ^index\.php$ - [L]
+RewriteRule ^([_0-9a-zA-Z-]+/)?uploads/wpjobboard/application/(.+) /pepperlillie/pdm/wp-content/plugins/wpjobboard/restrict.php?url=application/$2 [QSA,L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /pepperlillie/pdm/index.php [L]

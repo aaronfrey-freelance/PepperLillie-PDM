@@ -125,31 +125,12 @@ body.category-services {
 	background-size: cover;
 }
 
-body.careers, body.single-job_listing {
+body.jobs {
 	background: url('../img/backgrounds/careers_landing.jpg') no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
-}
-
-body.careers {
-	.main {
-		padding: 0;
-		ul.job_listings
-		{
-			li.job_listing {
-				border-bottom: 1px solid #a2abb2;
-				a {
-					padding-right: 0;
-					.position, .location, .meta
-					{
-						width: 50%;
-					}
-				}
-			}
-		}
-	}
 }
 
 body.category-news, #wrap.category-news  {
@@ -451,20 +432,6 @@ body.home {
 	}
 }
 
-.single_job_listing {
-	margin-top: 30px;
-	.company {
-		display: none;
-	}
-}
-
-.back-link {
-	color: #1f518b;
-	font-weight: 700;
-	font-size: 15px;
-}
-
-
 /* ==========================================================================
    Content
    ========================================================================== */
@@ -679,33 +646,6 @@ body.home {
 		}
 	}
 }
-
-div.job_listings, .single_job_listing {
-	div {
-		line-height: 20px;
-	}
-	ul {
-		li {
-			text-indent: 0;
-			padding: 0;
-		}
-		li:before {
-		    content: "";
-		}
-	}
-	.company_logo { display: none; }
-}
-
-ul.job_listings li.job_listing a,
-ul.job_listings li.no_job_listings_found a {
-	padding: 1em;
-}
-
-ul.job_listings li.job_listing a div.position,
-ul.job_listings li.no_job_listings_found a div.position {
-	padding: 0;
-}
-
 
 /* ==========================================================================
    Primary Content
@@ -1070,28 +1010,6 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
 		.address-footer { width: 100%; }
 		.social-footer { float: right; padding-bottom: 0; }
 	}
-
-	/* Jobs Listings */
-	body.careers {
-		.main {
-			padding: inherit;
-			ul.job_listings
-			{
-				li.job_listing {
-					a {
-						padding-right: inherit;
-						.position, .location, .meta
-						{
-							float: left;
-							width: 32%;
-						}
-					}
-				}
-			}
-		}
-	}
-
-
 }
 
 /* Desktop */

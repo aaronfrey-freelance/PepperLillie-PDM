@@ -57,6 +57,7 @@ function roots_display_sidebar() {
       'is_404',
       'is_front_page',
       'is_search',
+      'onJobs',
       array('is_category', array(4)),
       array('is_category', array(5))
     ),

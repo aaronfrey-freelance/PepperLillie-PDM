@@ -31,7 +31,7 @@
 		    		$cat_name = $category[0]->cat_name;
 		    		$title = $cat_name ? $cat_name : get_the_title();
 		    		$title = $title ? $title : single_cat_title('', false);
-					$title = notOnJobs() ? 'Careers' : $title;
+					$title = onJobs() ? 'Careers' : $title;
 					$short_blue = in_category(3) || in_category(4);
 				}
 	    		?>

@@ -1,1 +1,0 @@
-<li class="no_job_listings_found"><?php _e( 'No more jobs found matching your selection.', 'wp-job-manager' ); ?></li>

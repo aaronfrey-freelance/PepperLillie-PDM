@@ -84,9 +84,9 @@ function new_excerpt_more( $more ) {
 add_filter( 'excerpt_more', 'new_excerpt_more' );
 
 // Is this the jobs board?
-function notOnJobs()
+function onJobs()
 {
     $_SERVER['REQUEST_URI_PATH'] = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
     $segments = explode('/', $_SERVER['REQUEST_URI_PATH']);
-    return in_array('job', $segments);
+    return in_array('jobs', $segments);
 }
