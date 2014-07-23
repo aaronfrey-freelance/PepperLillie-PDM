@@ -95,24 +95,6 @@
     </div>
     <?php endif; ?>
 
-    <?php $relatedJobs = wpjb_find_jobs($related); ?>
-    <?php if($show_related && $relatedJobs->total > 0): ?>
-    <div class="wpjb-job-content">
-    <h3><?php _e("Related Jobs", "wpjobboard") ?></h3>
-    <ul class="wpjb-shortlist">
-    <?php foreach($relatedJobs->job as $relatedJob): ?>
-    <?php /* @var $relatedJob Wpjb_Model_Job */ ?>
-        <li class="<?php wpjb_job_features($relatedJob); ?>">
-            <a href="<?php echo wpjb_link_to("job", $relatedJob); ?>"><?php esc_html_e($relatedJob->job_title) ?></a>
-            <?php if($relatedJob->isNew()): ?><span class="wpjb-bulb"><?php _e("new", "wpjobboard") ?></span><?php endif; ?>
-            <?php wpjb_time_ago($relatedJob->job_created_at, __("posted {time_ago} ago.", "wpjobboard")) ?>
-         </li>
-    <?php endforeach; ?>
-    </ul>
-    </div>
-    <?php endif; ?>
-
-
     <?php endif; ?>
 
     <p><em>Philadelphia D&M, Inc. is an equal opportunity/affirmative action employer. Individuals who require reasonable accomodations under the Americans with Disbilities Act in order to participate in the search process should notify our office directly at <?php echo get_option('phonenumber'); ?>.</em></p>
