@@ -26,6 +26,8 @@
 
 	    		if(is_search()) {
 	    			$title = 'Search';
+	    		} else if(is_404()) {
+	    			$title = 'Page Not Found';
 	    		} else {
 		    		$category = get_the_category();
 		    		$cat_name = $category[0]->cat_name;
