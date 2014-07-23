@@ -2,7 +2,11 @@
 
 <?php if (!have_posts()) : ?>
   <div class="alert alert-warning">
-    <?php _e('Sorry, no results were found.', 'roots'); ?>
+  	<?php if(is_search()) : ?>
+    	<?php _e('Sorry, no results were found. Please try a new search.', 'roots'); ?>
+	<?php else : ?>
+		<?php _e('Sorry, no results were found.', 'roots'); ?>
+	<?php endif; ?>
   </div>
 <?php endif; ?>
 
