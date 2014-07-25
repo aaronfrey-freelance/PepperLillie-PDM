@@ -58,7 +58,7 @@ jQuery(function() {
   });
 
   // Resize project Images
-  function resizeProjectImages() {
+  jQuery(window).resize(function() {
     // Get project images
     jQuery('div.project-image').each(function( index ) {
       var container = jQuery(this);
@@ -74,12 +74,6 @@ jQuery(function() {
         img.css('width', '100%');
       }
     });
-  }
-
-  resizeProjectImages();
-
-  jQuery(window).resize(function() {
-    resizeProjectImages();
   });
 
   // Projects Dropdown Menu
