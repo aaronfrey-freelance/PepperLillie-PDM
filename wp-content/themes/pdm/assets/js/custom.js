@@ -57,25 +57,6 @@ jQuery(function() {
       }
   });
 
-  // Resize project Images
-  // jQuery(window).resize(function() {
-  //   // Get project images
-  //   jQuery('div.project-image').each(function( index ) {
-  //     var container = jQuery(this);
-  //     var containerRatio = container.height() / container.width();
-  //     var img = container.find('img');
-  //     var imgRatio = img.height() / img.width();
-
-  //     if(containerRatio > imgRatio) {
-  //       img.css('height', '100%');
-  //       img.css('width', 'auto');
-  //     } else {
-  //       img.css('height', 'auto');
-  //       img.css('width', '100%');
-  //     }
-  //   });
-  // });
-
   jQuery('div.project-image').imgLiquid();
 
   // Projects Dropdown Menu
