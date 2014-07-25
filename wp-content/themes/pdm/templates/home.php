@@ -25,16 +25,21 @@
 		<a href="#" class="next"></a>
 	</div>
 
+	<div class="project-info">
+		<p class="project-title" id="project-title"><?php echo $gallery[$first_key]->alttext; ?></p>
+		<p class="project-location" id="project-location"><?php echo $gallery[$first_key]->description; ?></p>
+	</div>
+
 	<div class="full-screen-container">
+
+		<div class="overlay visible-xs"></div>
 
 		<?php foreach($gallery as $index => $p) : ?>
 		<div
 			class="full-screen <?php echo $index === $first_key ? 'active' : '' ?>"
-			data-background="<?php echo $p->imageURL; ?>">
-			<div class="project-info">
-				<p class="project-title"><?php echo $p->alttext; ?></p>
-				<p class="project-location"><?php echo $p->description; ?></p>
-			</div>
+			data-background="<?php echo $p->imageURL; ?>"
+			data-title="<?php echo $p->alttext; ?>"
+			data-location="<?php echo $p->description; ?>">
 		</div>
 		<?php endforeach; ?>
 

@@ -91,6 +91,17 @@ form {
 	margin-top: 10px;
 }
 
+.overlay {
+	height: 100%;
+	width: 100%;
+	background-color: black;
+	position: absolute;
+	top: 0;
+	left: 0;
+    z-index: 4;
+    opacity: 0.4;
+}
+
 
 /* ==========================================================================
    Base
@@ -188,6 +199,7 @@ body.search, body.error404 {
 		font-size: 16px;
 		text-align: left;
 		padding-top: 30px;
+		z-index: 5;
 		.project-title {
 			font-size: 18px;
 			font-family: 'Roboto Slab', serif;

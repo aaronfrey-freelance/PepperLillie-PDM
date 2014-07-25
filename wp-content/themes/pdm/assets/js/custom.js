@@ -81,8 +81,16 @@ jQuery(function() {
       $next = (jQuery('#front-page .full-screen-container .active').next().length > 0) ? jQuery('#front-page .full-screen-container .active').next() : jQuery('#front-page .full-screen:first');
     }
 
+    var title = $next.data('title');
+    var location = $next.data('location');
+
+    jQuery('.project-info').fadeOut(500,function() {
+      jQuery('#project-title').text(title);
+      jQuery('#project-location').text(location);
+    }).fadeIn(500);
+
     $next.css('z-index',2); //move the next image up the pile
-    $active.fadeOut(1500,function() { //fade out the top image
+    $active.fadeOut(1000,function() { //fade out the top image
       $active.css('z-index',1).show().removeClass('active'); //reset the z-index and unhide the image
       $next.css('z-index',3).addClass('active');//make the next image the top one
     });
