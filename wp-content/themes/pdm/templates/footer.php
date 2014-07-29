@@ -18,14 +18,13 @@
 
 	<div class="white-box hidden-xs" id="white-box">
 
-		<div class="white-border-corner"></div>
-
-		<div class="pull-left">
+		<div>
 			<div class="white-border-top pull-left"></div>
 			<div class="white-border-top-right pull-left"></div>
 		</div>
 
 		<div>
+			<div class="white-border-corner"></div>
 			<div class="pull-left">
 				<div class="white-border-left"></div>
 				<div class="white-border-bottom-left"></div>
