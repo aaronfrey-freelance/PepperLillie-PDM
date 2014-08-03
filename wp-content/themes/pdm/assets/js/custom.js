@@ -124,24 +124,48 @@ jQuery(function() {
   }
 
   /* Project Slider */
+  var sliderViewable = jQuery('.slider-content');
+  var sliderContent = jQuery('.ngg-galleryoverview');
+  var imageWidth = jQuery('#ngg-image-0').outerWidth(true);
+
+  function getFullImages(getWidth) {
+    // Get the width of the viewable slider window
+    var viewWidth = sliderViewable.width();
+
+    // Calculate how many full images are present
+    var fullImages = Math.floor(viewWidth / imageWidth);
+
+    return getWidth ? fullImages * imageWidth : fullImages;
+  }
 
   // If there are images present
   if(jQuery('#ngg-image-0').length) {
 
+    // Remove unneeded elements
     jQuery('.slideshowlink').remove();
     jQuery('.ngg-clear').remove();
 
+    // Set the minimum amount fo images
+    var minimum = 16;
+    var images = sliderContent.find('.ngg-gallery-thumbnail-box');
+    var totalImages = images.length;
+
+    while(totalImages < minimum) {
+      images.clone().appendTo(sliderContent);
+      totalImages = totalImages + images.length;
+    }
+
+    // Set the left to negative width of full images shown
+    sliderContent.css('left', -getFullImages(true));
+
     jQuery('.advance-bar, .advance-arrow').on('click', function(e) {
       var btn = jQuery(this);
-      var sliderViewable = jQuery('.slider-content');
-      var sliderContent = jQuery('.ngg-galleryoverview');
-      var imageWidth = jQuery('#ngg-image-0').outerWidth(true);
 
       // Get the width of the viewable slider window
       var viewWidth = sliderViewable.width();
 
       // Calculate how many full images are present
-      var fullImages = Math.floor(viewWidth / imageWidth);
+      var fullImages = getFullImages();
 
       // Get the width of the total slideshow
       var totalWidth = jQuery('.ngg-gallery-thumbnail-box').length * imageWidth;
@@ -149,46 +173,24 @@ jQuery(function() {
       // Get the current left position of the slider
       var currentLeft = jQuery('.ngg-galleryoverview').position().left;
 
-      var remining = 0;
-      var slide = 0;
-      var desiredSlide = 0;
-
       if(btn.hasClass('left')) {
-        remaining = Math.abs(currentLeft);
-        var reset = totalWidth - viewWidth;
-        if(remaining === 0) {
-          sliderContent.animate({
-            left: "-"+reset
-          }, "fast", function() {
-            // Animation complete.
-          });
-        } else {
-          desiredSlide = fullImages * imageWidth;
-          slide = remaining < desiredSlide ? remaining : desiredSlide;
-          sliderContent.animate({
-            left: "-=-"+slide
-          }, 1000, function() {
-            // Animation complete.
-          });
-        }
+        sliderContent.animate({
+          left: parseInt(jQuery('.ngg-galleryoverview').css('left'), 10) + getFullImages(true)
+        }, 1000, function() {
+          /* when sliding to left we are moving the last item before the first item */
+          jQuery('.ngg-galleryoverview div.ngg-gallery-thumbnail-box:first').before(jQuery('.ngg-galleryoverview > div.ngg-gallery-thumbnail-box:gt('+-parseInt(fullImages+1)+')'));
+          /* and again, when we make that change we are setting the left indent of our unordered list to the default -210px */
+          jQuery('.ngg-galleryoverview').css({'left' : -getFullImages(true)});
+        });
       } else if(btn.hasClass('right')) {
-        // Calculate the remaining width left to slide
-        remaining = totalWidth + currentLeft - viewWidth;
-        if(remaining === 0) {
-          sliderContent.animate({
-            left: "0"
-          }, "fast", function() {
-            // Animation complete.
-          });
-        } else {
-          desiredSlide = fullImages * imageWidth;
-          slide = remaining < desiredSlide ? remaining : desiredSlide;
-          sliderContent.animate({
-            left: "+=-"+slide
-          }, 1000, function() {
-            // Animation complete.
-          });
-        }
+        sliderContent.animate({
+          left: "+=-"+getFullImages(true)
+        }, 1000, function() {
+          // Get the first n divs and put them after the last div
+          jQuery('.ngg-galleryoverview div.ngg-gallery-thumbnail-box:last').after(jQuery('.ngg-galleryoverview div.ngg-gallery-thumbnail-box:lt('+fullImages+')'));
+          // Set the left indent to the default 0
+          jQuery('.ngg-galleryoverview').css({'left' : -getFullImages(true)});
+        });
       }
     });
   }
