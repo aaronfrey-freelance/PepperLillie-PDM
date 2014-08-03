@@ -252,7 +252,12 @@ body.home {
 	border-bottom: 1px solid #c2c2c2;
 }
 .navbar-toggle { margin-top: 20px; }
-.navbar-collapse { border: none; }
+.navbar-collapse {
+	border: none;
+	position: absolute;
+	top: 73px;
+	width: 100%;
+}
 
 .mobile-search-text {
 	height: 55px;
@@ -679,8 +684,6 @@ body.home {
 	.wpjb-subscribe { display: none; }
 }
 
-
-
 .careers-back {
 	color: #1f518b;
 	font-size: 16px;
@@ -852,6 +855,11 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
 /* Tablet */
 @media (min-width: @screen-sm-min) {
 
+	.navbar-collapse {
+		top: inherit;
+		width: 100%;
+	}
+
 	#front-page {
 		.project-info {
 			top: 0;
@@ -921,7 +929,7 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
 			}
 		}
 		.ngg-galleryoverview {
-			width: 9999px;
+			width: 99999px;
 			margin: 0;
 			position: relative;
 			left: 0;
@@ -1045,6 +1053,10 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
 
 /* Desktop */
 @media (min-width: @screen-md-min) {
+
+	.navbar-collapse {
+		position: inherit;
+	}
 
 	.sidebar-category {
 		padding-left: 5px;

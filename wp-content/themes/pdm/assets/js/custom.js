@@ -128,6 +128,9 @@ jQuery(function() {
   // If there are images present
   if(jQuery('#ngg-image-0').length) {
 
+    jQuery('.slideshowlink').remove();
+    jQuery('.ngg-clear').remove();
+
     jQuery('.advance-bar, .advance-arrow').on('click', function(e) {
       var btn = jQuery(this);
       var sliderViewable = jQuery('.slider-content');
