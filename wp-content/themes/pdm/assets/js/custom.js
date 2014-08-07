@@ -1,5 +1,8 @@
 jQuery(function() {
 
+  // Project Download Link
+  jQuery('li.project-download-link a').attr('href', resumeLink);
+
   // Mobile Search Dropdown
   jQuery('.mobile-search').on('click', function(e) {
     e.preventDefault();

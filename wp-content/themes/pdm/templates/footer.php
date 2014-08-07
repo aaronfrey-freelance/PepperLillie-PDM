@@ -177,4 +177,8 @@
 
 </footer>
 
+<script>
+	var resumeLink = '<?php echo get_option("resumelink"); ?>';
+</script>
+
 <?php wp_footer(); ?>
