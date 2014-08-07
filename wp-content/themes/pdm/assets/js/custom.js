@@ -3,9 +3,16 @@ jQuery(function() {
   // Mobile Search Dropdown
   jQuery('.mobile-search').on('click', function(e) {
     e.preventDefault();
+    if(jQuery('.navbar-collapse').is(":visible")) {
+      jQuery('.navbar-toggle:not(.collapsed)').click();
+    }
     jQuery('.mobile-search-text').slideToggle();
   });
 
+  jQuery('.navbar-toggle').on('click', function(e) {
+    e.preventDefault();
+    jQuery('.mobile-search-text').slideUp();
+  });
 
   var myTimer;
   var interval = 5000;
