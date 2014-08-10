@@ -77,7 +77,7 @@
 							<div class="pull-left teaser-title">
 								<h1>Services Spotlight:</h1>
 								<h2><?php the_title(); ?></h2>
-								<a href="<?php the_permalink(); ?>">Learn More ></a>
+								<a href="<?php echo get_category_link(5); ?>">Learn More ></a>
 							</div>
 							<div class="pull-left teaser-image">
 								<?php the_post_thumbnail('teaser'); ?>
