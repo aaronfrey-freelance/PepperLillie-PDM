@@ -38,7 +38,7 @@
 				}
 	    		?>
 
-	    		<div class="blue-top col-md-10 col-md-offset-1">
+	    		<div class="blue-top">
 
 	    			<div class="blue-top-top">
 
@@ -79,7 +79,7 @@
 
 	    		</div>
 
-	    		<div class="center-content col-md-10 col-md-offset-1">
+	    		<div class="center-content">
 
 	    			<main class="main <?php echo roots_main_class(); ?>" role="main">
 
@@ -106,7 +106,7 @@
 
 		    	</div>
 
-				<div class="col-md-10 col-md-offset-1 image-slider hidden-xs">
+				<div class="image-slider hidden-xs">
 		    		<?php global $wpdb;
 					$results = $wpdb->get_results( "SELECT * FROM wp_ngg_gallery WHERE title = '$gallery'", OBJECT );
 					if($singular && count($results)) : $gid = $results[0]->gid; ?>
