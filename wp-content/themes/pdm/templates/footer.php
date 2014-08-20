@@ -10,8 +10,8 @@
 		<div>
 			<div class="blue-border-left pull-left"></div>
 			<div class="blue-box-content pull-left">
-				<p>Philadelphia D&M (PDM) is the tri-state area’s premier construction subcontractor — specializing in exterior framing, EIFS, drywall, fabricated drywall shapes, rough and finish carpentry, acoustical and specialty ceilings, millwork, spray foam insulation, and spray fireproofing.</p>
-				<a href="#">Learn More</a>
+				<?php $home = get_post(4); ?>
+				<p><?php echo $home->post_content;?></p>
 			</div>
 		</div>
 	</div>

@@ -28,19 +28,22 @@ jQuery(function() {
 
   function resizeSidebar() {
     var center_content_height = jQuery('.center-content .main').outerHeight();
+    var sidebar_height = jQuery('aside.sidebar').outerHeight();
 
-    if(center_content_height > jQuery('aside.sidebar').outerHeight()) {
-      jQuery('aside.sidebar').height(center_content_height + 50);
-    } else {
+    if(center_content_height > sidebar_height) {
+      jQuery('aside.sidebar').height(center_content_height);
+      jQuery('.center-content').height('auto');
+    } else if(center_content_height < sidebar_height) {
+      jQuery('.center-content').height(sidebar_height);
       jQuery('aside.sidebar').height('auto');
     }
   }
 
   resizeSidebar();
 
-  // jQuery(window).resize(function() {
-  //   resizeSidebar();
-  // });
+  jQuery(window).resize(function() {
+    resizeSidebar();
+  });
 
   /* Teaser Links */
   jQuery('#teaser-links li').on('click', function(e) {
