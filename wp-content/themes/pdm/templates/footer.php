@@ -160,7 +160,6 @@
 			<span><?php echo get_option('address3'); ?></span>
 			<span class="border"></span>
 			<span><?php echo get_option('phonenumber'); ?></span>
-			<a href="#" class="ftp hidden-sm hidden-xs">FTP</a>
 		</div>
 	</div>
 
