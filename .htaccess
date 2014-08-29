@@ -1,6 +1,5 @@
 
 # BEGIN WordPress
-
 <IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteBase /pepperlillie/pdm/
@@ -14,7 +13,7 @@ RewriteRule . /pepperlillie/pdm/index.php [L]
 # END WordPress
 
 
-# BEGIN User Added
+# BEGIN User Generated
 
 # BEGIN Enable Gzip Compression
 <ifModule mod_deflate.c>
@@ -45,4 +44,4 @@ FileETag None
 </ifModule>
 # END Expire headers
 
-# END User Added
+# END User Generated
